@@ -23,7 +23,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         hideKeyboardWhenTappedAround()
-    
+        tfUserName.addBottomBorder()
+        tfPassword.addBottomBorder()
     }
     
     //--------------------
