@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8qc-gr-zRy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="cDL-QL-asG">
+            <objects>
+                <navigationController id="8qc-gr-zRy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0cu-sN-EVW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8tj-8U-oDs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQH-t3-hRv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-806" y="102"/>
+        </scene>
+        <!--Login Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginController" customModule="HomeMovie" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-wO-iRG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2h2-Ae-yrs" customClass="CustomField" customModule="HomeMovie" customModuleProvider="target">
+                                <rect key="frame" x="57" y="538" width="300" height="55"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="6aX-aE-pq3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="U0p-1r-R8a"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="IBL-oF-VII"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obA-Kd-uq3">
+                                <rect key="frame" x="82" y="673" width="250" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="qRe-01-j48"/>
+                                    <constraint firstAttribute="height" constant="65" id="yiF-bq-Qo8"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="login_button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-Co-elI" customClass="CustomField" customModule="HomeMovie" customModuleProvider="target">
+                                <rect key="frame" x="59" y="433" width="300" height="55"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="sK0-eu-Qwf"/>
+                                </connections>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homemovie_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tqu-nh-ytz">
+                                <rect key="frame" x="132" y="142" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="0nQ-zp-eEM"/>
+                                    <constraint firstAttribute="height" constant="150" id="z4h-2X-NhE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZD6-Co-elI" firstAttribute="width" secondItem="2h2-Ae-yrs" secondAttribute="width" id="5aF-5N-kKq"/>
+                            <constraint firstAttribute="bottom" secondItem="TZU-wO-iRG" secondAttribute="bottom" id="BPF-Em-EMg"/>
+                            <constraint firstItem="TZU-wO-iRG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bfd-9z-ZLC"/>
+                            <constraint firstItem="ZD6-Co-elI" firstAttribute="centerX" secondItem="2h2-Ae-yrs" secondAttribute="centerX" constant="2" id="Deu-Lf-xhB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="obA-Kd-uq3" secondAttribute="bottom" constant="124" id="Ezi-pE-p6i"/>
+                            <constraint firstItem="TZU-wO-iRG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GXF-02-zFL"/>
+                            <constraint firstItem="obA-Kd-uq3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OVZ-QM-VsE"/>
+                            <constraint firstItem="ZD6-Co-elI" firstAttribute="height" secondItem="2h2-Ae-yrs" secondAttribute="height" id="PCB-M8-nrc"/>
+                            <constraint firstItem="2h2-Ae-yrs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W5H-LL-Nxh"/>
+                            <constraint firstItem="2h2-Ae-yrs" firstAttribute="top" secondItem="ZD6-Co-elI" secondAttribute="bottom" constant="50" id="YdL-X9-k7A"/>
+                            <constraint firstItem="obA-Kd-uq3" firstAttribute="top" secondItem="2h2-Ae-yrs" secondAttribute="bottom" constant="80" id="aM2-9n-Jc7"/>
+                            <constraint firstItem="TZU-wO-iRG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="iX9-kx-x3I"/>
+                            <constraint firstItem="tqu-nh-ytz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="54" id="lT8-ry-fXL"/>
+                            <constraint firstItem="tqu-nh-ytz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="soH-yr-pUv"/>
+                            <constraint firstItem="2h2-Ae-yrs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="57" id="vUr-2i-a6K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xrq-cS-JSg"/>
+                    <connections>
+                        <outlet property="tfPassword" destination="2h2-Ae-yrs" id="X1a-a0-4l7"/>
+                        <outlet property="tfUserName" destination="ZD6-Co-elI" id="fBY-kq-cE7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="102.45535714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="414" height="896"/>
+        <image name="homemovie_logo" width="150" height="150"/>
+        <image name="login_button" width="446" height="118"/>
+    </resources>
+</document>

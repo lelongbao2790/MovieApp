@@ -1,0 +1,6 @@
+framework module Pods_HomeMovie {
+  umbrella header "Pods-HomeMovie-umbrella.h"
+
+  export *
+  module * { export * }
+}
