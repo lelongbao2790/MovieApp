@@ -23,49 +23,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B322414F-C5EB-4258-BA32-47A87A559B99"
+            uuid = "B486F8C6-1B01-424F-A865-766E990D7C7B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HomeMovie/View/Controller/MainController.swift"
+            filePath = "HomeMovie/DataDomain/BusinessDomain/BaseClient+Movie.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "loginWithUrl(username:password:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B322414F-C5EB-4258-BA32-47A87A559B99 - c956c31b8f8ab3a8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HomeMovie.MainController.viewDidLoad() -&gt; ()"
-                  moduleName = "HomeMovie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Data/Bi/SwiftTraining/MovieApp/HomeMovie/HomeMovie/View/Controller/MainController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "B322414F-C5EB-4258-BA32-47A87A559B99 - 8d0d7555bf36de6f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Bool&gt;, Swift.Optional&lt;__C.NSError&gt;, Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; () in HomeMovie.MainController.viewDidLoad() -&gt; ()"
-                  moduleName = "HomeMovie"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Volumes/Data/Bi/SwiftTraining/MovieApp/HomeMovie/HomeMovie/View/Controller/MainController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "36">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "605C7016-CF0C-4673-A314-DF35458C9351"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeMovie/View/Controller/LoginController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "loginAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCB139C4-2EDC-4EB1-804C-527D95A701AC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeMovie/DataDomain/BusinessDomain/BaseClient+Movie.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "loginWithUrl(username:password:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

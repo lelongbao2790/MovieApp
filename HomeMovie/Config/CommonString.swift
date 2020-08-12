@@ -15,3 +15,7 @@ extension String {
         return md5String.replacingOccurrences(of: "MD5 digest: ", with: "", options: [.caseInsensitive, .regularExpression])
     }
 }
+
+struct ErrorMessage {
+    static let LoginFailMessage = "Invalid password"
+}

@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import UIKit
+extension UIViewController {
+    func initController(id: String) -> UIViewController {
+        return (storyboard?.instantiateViewController(withIdentifier: id))!
+    }
+}
+struct StoryboardId {
+    static let MainControllerId = "MainController"
+}
+
+

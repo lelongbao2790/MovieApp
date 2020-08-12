@@ -13,9 +13,7 @@ class MainController : UIViewController {
 
     
     override func viewDidLoad() {
-        BaseClient.sharedInstance.loginWithUrl(username: "lelongbao2790@gmail.com", password: "123456") { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-            
-        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

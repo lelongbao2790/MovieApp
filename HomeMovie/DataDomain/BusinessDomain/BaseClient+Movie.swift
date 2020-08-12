@@ -17,15 +17,30 @@ extension BaseClient {
             .responseJSON { ( response : DataResponse <Any>) in
             
             switch response.result {
+            case .success (_):
                 
-            case .success (let movie):
-                //completion(true, nil, movie as AnyObject);
+                let data = response.result.value as? NSDictionary
+                let errorKey = data?.object(forKey: ResponseKey.ErrorKey) as? Int;
+                let rawValue = data?.object(forKey: ResponseKey.RawKey)
                 
-                break
-            case .failure(let error):
-                //completion(false, error as NSError?, nil);
-                break
-                
+                if ( errorKey == ErrorCode.Success.rawValue) {
+                        // Login success
+                    self.accessToken = (rawValue as!  NSDictionary).object(forKey: ResponseKey.AccessToken) as? String
+                    completion(true, nil, data as AnyObject);
+                    
+                } else {
+                    // Login fail
+                    let message = String(format: "\(rawValue as? String ?? ErrorMessage.LoginFailMessage)")
+                    
+                    let error = NSError(domain: Services.baseHTTPS,
+                                        code: 0,
+                                        userInfo: [NSLocalizedDescriptionKey :message])
+                    completion(false, error, nil);
+                }
+                    break
+                case .failure(let error):
+                    completion(false, error as NSError?, nil);
+                    break
             }
         }
     }

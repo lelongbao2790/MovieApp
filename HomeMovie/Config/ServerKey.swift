@@ -15,3 +15,14 @@ struct Header {
      static let AccessTokenKey = "Access-Token"
 }
 
+struct ResponseKey {
+    static let AccessToken = "AccessTokenKey"
+    static let ErrorKey = "e"
+    static let RawKey = "r"
+}
+
+enum ErrorCode: Int {
+    case Success = 0
+    case Fail = 1
+}
+
