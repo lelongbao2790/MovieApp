@@ -10,7 +10,7 @@ import Foundation
 
 struct Tag {
     static let Features : Dictionary =
-                        ["Mới cập nhật":"moi-cap-nhat",
+                        ["Mới cập nhật":"moi-cap-nhat", // show on banner
                         "Hot trong tháng":"hot-trong-thang",
                         "HDViệt đề cử":"hdviet-de-cu",
                         "Hành động":"hanh-dong",
@@ -46,7 +46,7 @@ struct Tag {
         
     
     static let TelevisionSeries : Dictionary =
-                        ["Mới cập nhật":"moi-cap-nhat",
+                        ["Mới cập nhật":"moi-cap-nhat", // show on banner
                         "Hot trong tháng":"hot-trong-thang",
                         "HDViệt đề cử":"hdviet-de-cu",
                         "Hành động":"hanh-dong",
