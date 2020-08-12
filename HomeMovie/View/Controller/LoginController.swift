@@ -58,10 +58,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
     //--------------------
     @IBAction func loginAction(_ sender: Any) {
         if(!tfUserName.text!.isEmpty && !tfPassword.text!.isEmpty) {
+            Loading.showLoading(message: Message.LoadingMessage, view: self.view)
             BaseClient.sharedInstance.loginWithUrl(username: tfUserName.text!,
                                                    password: tfPassword.text!)
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                
+                Loading.dismissLoading()
                 if(isSuccess!) {
                     self.navigationController?.pushViewController(self.initController(id: StoryboardId.MainControllerId), animated: true)
                 } else {

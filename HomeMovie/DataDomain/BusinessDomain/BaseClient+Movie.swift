@@ -37,7 +37,7 @@ extension BaseClient {
                         
                     } else {
                         // Login fail
-                        let message = String(format: "\(rawValue as? String ?? ErrorMessage.LoginFailMessage)")
+                        let message = String(format: "\(rawValue as? String ?? Message.LoginFailMessage)")
                         
                         let error = NSError(domain: Services.baseHTTPS,
                                             code: 0,

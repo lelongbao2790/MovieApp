@@ -16,6 +16,7 @@ extension String {
     }
 }
 
-struct ErrorMessage {
+struct Message {
     static let LoginFailMessage = "Invalid password"
+    static let LoadingMessage = "Loading..."
 }

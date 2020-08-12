@@ -3,42 +3,36 @@ PODS:
   - AlamofireObjectMapper (5.1.0):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
+  - JGProgressHUD (2.1)
   - ObjectMapper (3.5.3)
-  - SVProgressHUD (2.2.6):
-    - SVProgressHUD/Core (= 2.2.6)
-  - SVProgressHUD/Core (2.2.6)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
-  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
+  - JGProgressHUD
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - JGProgressHUD
     - ObjectMapper
 
 EXTERNAL SOURCES:
   AlamofireObjectMapper:
     :branch: xcode-10-2-fix
     :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
-  SVProgressHUD:
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 CHECKOUT OPTIONS:
   AlamofireObjectMapper:
     :commit: 0cbb1f954b9432124c30955514e0219c2d8e5a33
     :git: https://github.com/RomanPodymov/AlamofireObjectMapper.git
-  SVProgressHUD:
-    :commit: 0a9abb56a8d5c1ffc0078babc07fb11ff2fa2f22
-    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
+  JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  SVProgressHUD: de812b4f0e1d65358f0064416473174ae619843f
 
-PODFILE CHECKSUM: 2bae283b5596d7d8e0a32910f5319c262b00e872
+PODFILE CHECKSUM: 66aa5e4e821d18463172b7de2f9cc2e9a8d9d2a1
 
 COCOAPODS: 1.9.3
