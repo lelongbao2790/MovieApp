@@ -12,35 +12,50 @@ import Alamofire
 extension BaseClient {
     
     func loginWithUrl(username:String, password: String, completion:@escaping ServiceResponse) {
-        let request = Services.login(username: username, password: password) as URLRequestConvertible
-        Alamofire.request(request)
-            .responseJSON { ( response : DataResponse <Any>) in
+        DispatchQueue.global(qos: .background).async {
             
-            switch response.result {
-            case .success (_):
+            // Run on background thread
+            let request = Services.login(username: username, password: password) as URLRequestConvertible
+            Alamofire.request(request)
+                .responseJSON { ( response : DataResponse <Any>) in
                 
-                let data = response.result.value as? NSDictionary
-                let errorKey = data?.object(forKey: ResponseKey.ErrorKey) as? Int;
-                let rawValue = data?.object(forKey: ResponseKey.RawKey)
-                
-                if ( errorKey == ErrorCode.Success.rawValue) {
-                        // Login success
-                    self.accessToken = (rawValue as!  NSDictionary).object(forKey: ResponseKey.AccessToken) as? String
-                    completion(true, nil, data as AnyObject);
+                switch response.result {
+                case .success (_):
                     
-                } else {
-                    // Login fail
-                    let message = String(format: "\(rawValue as? String ?? ErrorMessage.LoginFailMessage)")
+                    let data = response.result.value as? NSDictionary
+                    let errorKey = data?.object(forKey: ResponseKey.ErrorKey) as? Int
+                    let rawValue = data?.object(forKey: ResponseKey.RawKey)
                     
-                    let error = NSError(domain: Services.baseHTTPS,
-                                        code: 0,
-                                        userInfo: [NSLocalizedDescriptionKey :message])
-                    completion(false, error, nil);
+                    if ( errorKey == ErrorCode.Success.rawValue) {
+                            // Login success
+                        self.accessToken = (rawValue as!  NSDictionary).object(forKey: ResponseKey.AccessToken) as? String
+                        DispatchQueue.main.async {
+                            // Run on main thread
+                            completion(true, nil, data as AnyObject);
+                        }
+                        
+                        
+                    } else {
+                        // Login fail
+                        let message = String(format: "\(rawValue as? String ?? ErrorMessage.LoginFailMessage)")
+                        
+                        let error = NSError(domain: Services.baseHTTPS,
+                                            code: 0,
+                                            userInfo: [NSLocalizedDescriptionKey :message])
+                        DispatchQueue.main.async {
+                            // Run on main thread
+                            completion(false, error, nil);
+                        }
+                    }
+                        break
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            // Run on main thread
+                            completion(false, error as NSError?, nil);
+                        }
+                        
+                        break
                 }
-                    break
-                case .failure(let error):
-                    completion(false, error as NSError?, nil);
-                    break
             }
         }
     }
