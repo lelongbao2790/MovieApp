@@ -40,7 +40,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     func configView() {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Config field
         tfUserName.addBottomBorder()

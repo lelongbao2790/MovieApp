@@ -11,9 +11,8 @@
         <!--Navigation Controller-->
         <scene sceneID="cDL-QL-asG">
             <objects>
-                <navigationController id="8qc-gr-zRy" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="8qc-gr-zRy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0cu-sN-EVW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -33,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-wO-iRG">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="-44" width="414" height="940"/>
                             </imageView>
                             <textField opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2h2-Ae-yrs" customClass="CustomField" customModule="HomeMovie" customModuleProvider="target">
                                 <rect key="frame" x="60" y="513" width="300" height="55"/>
@@ -82,7 +81,7 @@
                                 </connections>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homemovie_logo" translatesAutoresizingMaskIntoConstraints="NO" id="tqu-nh-ytz">
-                                <rect key="frame" x="132" y="153" width="150" height="150"/>
+                                <rect key="frame" x="132" y="109" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="0nQ-zp-eEM"/>
                                     <constraint firstAttribute="height" constant="150" id="z4h-2X-NhE"/>
@@ -104,7 +103,7 @@
                             <constraint firstItem="ZD6-Co-elI" firstAttribute="width" secondItem="2h2-Ae-yrs" secondAttribute="width" id="5aF-5N-kKq"/>
                             <constraint firstItem="ZD6-Co-elI" firstAttribute="leading" secondItem="fhN-SH-v6e" secondAttribute="trailing" constant="17" id="AlR-Cq-01B"/>
                             <constraint firstAttribute="bottom" secondItem="TZU-wO-iRG" secondAttribute="bottom" id="BPF-Em-EMg"/>
-                            <constraint firstItem="TZU-wO-iRG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bfd-9z-ZLC"/>
+                            <constraint firstItem="TZU-wO-iRG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-88" id="Bfd-9z-ZLC"/>
                             <constraint firstItem="ZD6-Co-elI" firstAttribute="centerX" secondItem="2h2-Ae-yrs" secondAttribute="centerX" constant="2" id="Deu-Lf-xhB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="obA-Kd-uq3" secondAttribute="bottom" constant="124" id="Ezi-pE-p6i"/>
                             <constraint firstItem="TZU-wO-iRG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GXF-02-zFL"/>
@@ -147,13 +146,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITR-AX-8vZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzO-3A-JI6">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1044"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-df-fYZ" customClass="BannerView" customModule="HomeMovie" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="201"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="245"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ryz-aL-kgA">
                                                     <size key="itemSize" width="414" height="205"/>
@@ -194,7 +193,7 @@
                                                 </cells>
                                             </collectionView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHy-09-4R4">
-                                                <rect key="frame" x="0.0" y="203" width="414" height="649"/>
+                                                <rect key="frame" x="0.0" y="247" width="414" height="649"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="aSl-v9-xJI">
@@ -215,7 +214,7 @@
                                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
-                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="aQd-db-KSK" customClass="DetailMovieCell" customModule="HomeMovie" customModuleProvider="target">
+                                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="aQd-db-KSK" customClass="DetailMovieCell" customModule="HomeMovie" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="128" height="201"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Myx-ka-KHS">
@@ -272,13 +271,13 @@
                                 <constraints>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="trailing" secondItem="IEG-bL-xa2" secondAttribute="trailing" id="0fw-8o-6tE"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="leading" secondItem="ITR-AX-8vZ" secondAttribute="leading" id="Kzl-W9-CF5"/>
-                                    <constraint firstAttribute="bottom" secondItem="qzO-3A-JI6" secondAttribute="bottom" constant="-148" id="MOx-id-r9V"/>
+                                    <constraint firstAttribute="bottom" secondItem="qzO-3A-JI6" secondAttribute="bottom" constant="-104" id="MOx-id-r9V"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="leading" secondItem="IEG-bL-xa2" secondAttribute="leading" id="PZg-SZ-YDu"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="top" secondItem="ITR-AX-8vZ" secondAttribute="top" id="WtJ-u9-W2V"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="bottom" secondItem="IEG-bL-xa2" secondAttribute="bottom" constant="148" id="aNS-so-9eu"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="top" secondItem="IEG-bL-xa2" secondAttribute="top" id="aTb-we-OD6"/>
                                     <constraint firstAttribute="width" constant="414" id="fSM-VQ-drW"/>
-                                    <constraint firstAttribute="height" constant="852" id="ffp-oL-fWK"/>
+                                    <constraint firstAttribute="height" constant="896" id="ffp-oL-fWK"/>
                                     <constraint firstAttribute="trailing" secondItem="qzO-3A-JI6" secondAttribute="trailing" id="neL-WT-0dJ"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="kYF-1M-gFh"/>
@@ -294,7 +293,7 @@
                             <constraint firstItem="ITR-AX-8vZ" firstAttribute="trailing" secondItem="Ovf-ip-uXt" secondAttribute="trailing" id="M1h-rK-xVB"/>
                             <constraint firstItem="jjQ-Yb-aLn" firstAttribute="top" secondItem="X2m-5O-hXh" secondAttribute="top" id="Ofe-6z-JmA"/>
                             <constraint firstItem="jjQ-Yb-aLn" firstAttribute="leading" secondItem="Ovf-ip-uXt" secondAttribute="leading" id="ikd-35-6zT"/>
-                            <constraint firstItem="ITR-AX-8vZ" firstAttribute="top" secondItem="Ovf-ip-uXt" secondAttribute="top" id="oCz-E1-I5U"/>
+                            <constraint firstItem="ITR-AX-8vZ" firstAttribute="top" secondItem="Ovf-ip-uXt" secondAttribute="top" constant="-44" id="oCz-E1-I5U"/>
                             <constraint firstAttribute="bottom" secondItem="ITR-AX-8vZ" secondAttribute="bottom" id="vLD-cr-aYa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ovf-ip-uXt"/>
