@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
 
 extension BaseClient {
     
@@ -59,24 +61,19 @@ extension BaseClient {
             }
         }
     }
-//    
-//    func listMovieByGenre(genre: String, tag: String, page: String) {
-//        let request = Services.listMovie(genre: genre, tag: tag, page: page, token: <#T##String#>) as URLRequestConvertible
-//        Alamofire.request(request)
-//            .responseJSON { ( response : DataResponse <Any>) in
-//            
-//            switch response.result {
-//                
-//            case .success (let movie):
-//                //completion(true, nil, movie as AnyObject);
-//                
-//                break
-//            case .failure(let error):
-//                //completion(false, error as NSError?, nil);
-//                break
-//                
-//            }
-//        }
-//    }
+    
+    func listMovieByGenre(genre: String, tag: String, page: String) {
+        let request = Services.listMovie(genre: genre, tag: tag, page: page, token: self.accessToken!) as URLRequestConvertible
+        Alamofire.request(request)
+                .responseObject { (response: DataResponse<ResponseMovie>) in
+                switch response.result {
+                case let .success(data): break
+
+                case let .failure(error): break
+                }
+                
+        }
+        
+    }
     
 }

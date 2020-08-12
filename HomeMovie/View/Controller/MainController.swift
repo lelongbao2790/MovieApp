@@ -17,6 +17,6 @@ class MainController : UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
- 
+        BaseClient.sharedInstance.listMovieByGenre(genre: "1", tag: "lich-su", page: "1")
     }
 }
