@@ -51,7 +51,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-
+    
     //--------------------
     // MARK : Action
     //--------------------
@@ -63,12 +63,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
                 if(isSuccess!) {
-                    self.navigationController?.pushViewController(self.initController(id: StoryboardId.MainControllerId), animated: true)
+                    StoryboardId.keyWindows!.rootViewController = self.initController(id: StoryboardId.ParentControllerId);
                 } else {
                     // Show message login fail
                 }
             }
         }
-        
     }
 }

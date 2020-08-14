@@ -79,8 +79,8 @@ struct Tag {
     
 }
 
-enum Genre {
-    case Hot
-    case Feature
-    case Television
+enum Genre : Int {
+    case Hot = 0
+    case Feature = 1
+    case Television = 2
 }

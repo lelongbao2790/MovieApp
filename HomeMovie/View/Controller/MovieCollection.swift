@@ -9,13 +9,28 @@
 import UIKit
 
 class MovieCollection: UICollectionView {
+    
+    var listMovie: Array<Movie>? = nil
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+    func loadListMovieFromJson(movies: Array<Movie>) -> Void {
+        listMovie = movies
+        self.reloadData()
     }
-    */
-
+    
+    //-----------------
+    // MARK - UICollectionDelegate, UICollectionDataSource
+//    //-----------------
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//
+//    }
+    
 }

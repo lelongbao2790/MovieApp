@@ -55,7 +55,6 @@ extension BaseClient {
                             // Run on main thread
                             completion(false, error as NSError?, nil);
                         }
-                        
                         break
                 }
             }
@@ -63,17 +62,28 @@ extension BaseClient {
     }
     
     func listMovieByGenre(genre: String, tag: String, page: String) {
-        let request = Services.listMovie(genre: genre, tag: tag, page: page, token: self.accessToken!) as URLRequestConvertible
-        Alamofire.request(request)
-                .responseObject { (response: DataResponse<ResponseMovie>) in
-                switch response.result {
-                case let .success(data): break
+        DispatchQueue.global(qos: .background).async {
+            // Run on background
+            let request = Services.listMovie(genre: genre, tag: tag, page: page, token: self.accessToken!) as URLRequestConvertible
+            Alamofire.request(request)
+                    .responseObject { (response: DataResponse<ResponseMovie>) in
+                    switch response.result {
+                    case let .success(data):
+                        DispatchQueue.main.async {
+                            // Run on main thread
 
-                case let .failure(error): break
-                }
-                
+                        }
+                        break
+
+                    case let .failure(error):
+                        DispatchQueue.main.async {
+                            // Run on main thread
+
+                        }
+                        break
+                    }
+            }
         }
-        
     }
     
 }
