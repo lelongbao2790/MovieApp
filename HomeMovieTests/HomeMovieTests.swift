@@ -22,9 +22,7 @@ class HomeMovieTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        BaseClient.sharedInstance.loginWithUrl(username: "lelongbao2790@gmail.com", password: "123456") { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-            
-        }
+      
     }
 
     func testPerformanceExample() throws {

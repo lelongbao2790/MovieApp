@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import RealmSwift
 import ObjectMapper
-class ResponseMovie: NSObject, Mappable {
+
+class ResponseMovie: Object, Mappable {
     var error = 0
     var message = ""
     var data : Datas?
@@ -26,17 +27,19 @@ class ResponseMovie: NSObject, Mappable {
     }
 }
 
-class Datas: NSObject, Mappable {
+class Datas: Object, Mappable {
+    
+    
     var metadata : Metadata?
-    var list :Array<Movie>?
+    var list = List<Movie>()
 
-   required convenience init?(map: Map) {
-       self.init()
-   }
-
+    required convenience init?(map: Map) {
+        self.init()
+    }
+    
    func mapping(map: Map) {
        metadata        <- map["metadata"]
-       list           <- map["lists"]
+       list           <- (map["lists"], ListTransform<Movie>())
       
    }
 }

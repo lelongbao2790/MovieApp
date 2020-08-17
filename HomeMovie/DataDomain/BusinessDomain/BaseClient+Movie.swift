@@ -13,6 +13,11 @@ import AlamofireObjectMapper
 
 extension BaseClient {
     
+    /**
+    * Login
+    * @param: username, password md5
+    * @return : token
+    */
     func loginWithUrl(username:String, password: String, completion:@escaping ServiceResponse) {
         DispatchQueue.global(qos: .background).async {
             
@@ -31,6 +36,7 @@ extension BaseClient {
                     if ( errorKey == ErrorCode.Success.rawValue) {
                             // Login success
                         self.accessToken = (rawValue as!  NSDictionary).object(forKey: ResponseKey.AccessToken) as? String
+                        DataManager.shared.AddValue(key: Header.AccessTokenKey, value:  self.accessToken ?? "" )
                         DispatchQueue.main.async {
                             // Run on main thread
                             completion(true, nil, data as AnyObject);
@@ -61,7 +67,12 @@ extension BaseClient {
         }
     }
     
-    func listMovieByGenre(genre: String, tag: String, page: String) {
+    /**
+     * Get list movie
+     * @param: genre(0,1,2), tag: (from dictionary), page
+     * @return listData in callback
+     */
+    func listMovieByGenre(genre: String, tag: String, page: String, completion:@escaping ServiceResponse) {
         DispatchQueue.global(qos: .background).async {
             // Run on background
             let request = Services.listMovie(genre: genre, tag: tag, page: page, token: self.accessToken!) as URLRequestConvertible
@@ -71,19 +82,23 @@ extension BaseClient {
                     case let .success(data):
                         DispatchQueue.main.async {
                             // Run on main thread
-
+                            completion(true, nil, data);
                         }
                         break
 
                     case let .failure(error):
                         DispatchQueue.main.async {
                             // Run on main thread
-
+                            completion(false, error as NSError?, nil);
                         }
                         break
                     }
             }
         }
+    }
+    
+    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
     
 }

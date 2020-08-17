@@ -11,12 +11,16 @@ import UIKit
 
 class MainController : UIViewController {
 
+    @IBOutlet weak var bannerView: BannerView!
     
     override func viewDidLoad() {
-        
+        bannerView.setDelegateDatasource()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        BaseClient.sharedInstance.listMovieByGenre(genre: "1", tag: "lich-su", page: "1")
+        
+        super.viewWillAppear(false)
+        bannerView.loadMovies()
     }
+
 }

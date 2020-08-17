@@ -5,17 +5,25 @@ PODS:
     - ObjectMapper (~> 3.4)
   - JGProgressHUD (2.1)
   - ObjectMapper (3.5.3)
+  - Realm (5.3.3):
+    - Realm/Headers (= 5.3.3)
+  - Realm/Headers (5.3.3)
+  - RealmSwift (5.3.3):
+    - Realm (= 5.3.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
   - JGProgressHUD
+  - RealmSwift
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - JGProgressHUD
     - ObjectMapper
+    - Realm
+    - RealmSwift
 
 EXTERNAL SOURCES:
   AlamofireObjectMapper:
@@ -32,7 +40,9 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 9fec33dcec52497a2a32678cd3a7b597b5a32514
   JGProgressHUD: aa403e9a5b45cae98903c4600cccdd98c0c3ec90
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
+  RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
 
-PODFILE CHECKSUM: 337a33ec072ad0ffdfb21810b45084c422e8cc4c
+PODFILE CHECKSUM: 4b932b481723d3182ed0e03240ceed117f5fb667
 
 COCOAPODS: 1.9.3

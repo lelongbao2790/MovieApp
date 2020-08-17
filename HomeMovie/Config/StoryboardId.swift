@@ -16,6 +16,9 @@ extension UIViewController {
 struct StoryboardId {
     static let MainControllerId = "MainController"
     static let ParentControllerId = "ParentController"
+    static let BannerCellId = "BannerCell"
+    static let DetailMovieCellId = "DetailMovieCellId"
+    
     static let keyWindows =
     UIApplication.shared.connectedScenes
     .filter({$0.activationState == .foregroundActive})

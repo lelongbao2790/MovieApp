@@ -19,8 +19,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
     //--------------------
     // MARK : Life Cycle
     //--------------------
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         configView()
     }
     
@@ -50,6 +51,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
                                                                  action: #selector(self.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        // Check token key
+        let token = DataManager.shared.GetValue(key: Header.AccessTokenKey)
+        if(!token.isEmpty) {
+            BaseClient.shared.accessToken = token
+            changeToRootView()
+        }
+    }
+    
+    func changeToRootView() -> Void {
+        StoryboardId.keyWindows!.rootViewController = self.initController(id: StoryboardId.ParentControllerId);
     }
     
     //--------------------
@@ -58,12 +70,12 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBAction func loginAction(_ sender: Any) {
         if(!tfUserName.text!.isEmpty && !tfPassword.text!.isEmpty) {
             Loading.showLoading(message: Message.LoadingMessage, view: self.view)
-            BaseClient.sharedInstance.loginWithUrl(username: tfUserName.text!,
-                                                   password: tfPassword.text!)
+            BaseClient.shared.loginWithUrl(username: tfUserName.text!,
+                                           password: tfPassword.text!)
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
                 if(isSuccess!) {
-                    StoryboardId.keyWindows!.rootViewController = self.initController(id: StoryboardId.ParentControllerId);
+                    StoryboardId.keyWindows!.rootViewController = self.initController(id: StoryboardId.ParentControllerId)
                 } else {
                     // Show message login fail
                 }

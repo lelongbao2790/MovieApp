@@ -14,7 +14,7 @@ class BaseClient: NSObject {
     var accessToken: String?
     
     //Singleton
-    static let sharedInstance = BaseClient()
+    static let shared = BaseClient()
     
     //Block
     typealias ServiceResponse = (Bool?, NSError?, AnyObject?) -> Void
@@ -37,9 +37,9 @@ class BaseClient: NSObject {
             case .listMovie: return .get
             case .detailInformation: return .get
             case .playMovie: return .get
-                
             }
-         }
+            
+        }
 
         var path: String
         {
@@ -57,40 +57,40 @@ class BaseClient: NSObject {
                 return String(format: API.kPlayUrl, movieId, token, ep)
             
             }
+        
         }
-
+            
         // MARK: URLRequestConvertible
-
-        func asURLRequest() throws -> URLRequest
-        {
-            
-            // Create http url
-            let urlHttp = try Services.baseHTTP.appending(path).asURL()
-            var urlHttpRequest = URLRequest(url: urlHttp)
-            urlHttpRequest.httpMethod = method.rawValue
-            
-            // Create https url
-            let urlHttps = try Services.baseHTTPS.appending(path).asURL()
-            var urlHttpsRequest = URLRequest(url: urlHttps)
-            urlHttpsRequest.httpMethod = method.rawValue
-            urlHttpsRequest.setValue(Header.ApplicationJson, forHTTPHeaderField: Header.ContentType)
-            
-            switch self {
-            case .login(_, _):
-                return urlHttpsRequest
+            func asURLRequest() throws -> URLRequest
+            {
                 
-            case .playMovie(_, _, _):
-                return urlHttpsRequest
+                // Create http url
+                let urlHttp = try Services.baseHTTP.appending(path).asURL()
+                var urlHttpRequest = URLRequest(url: urlHttp)
+                urlHttpRequest.httpMethod = method.rawValue
                 
-            case .listMovie( genre: _, tag: _, page: _, token: let accessToken):
-                urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
-                return urlHttpRequest
+                // Create https url
+                let urlHttps = try Services.baseHTTPS.appending(path).asURL()
+                var urlHttpsRequest = URLRequest(url: urlHttps)
+                urlHttpsRequest.httpMethod = method.rawValue
+                urlHttpsRequest.setValue(Header.ApplicationJson, forHTTPHeaderField: Header.ContentType)
                 
-            case .detailInformation(movieId: _, token: let accessToken):
-                urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
-                return urlHttpRequest
-            }
-          }
+                switch self {
+                case .login(_, _):
+                    return urlHttpsRequest
+                    
+                case .playMovie(_, _, _):
+                    return urlHttpsRequest
+                    
+                case .listMovie( genre: _, tag: _, page: _, token: let accessToken):
+                    urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
+                    return urlHttpRequest
+                    
+                case .detailInformation(movieId: _, token: let accessToken):
+                    urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
+                    return urlHttpRequest
+                }
+        }
     }
-
 }
+

@@ -21,4 +21,8 @@ class Loading: NSObject {
     static func dismissLoading() {
         activity.dismiss(afterDelay: 1.0)
     }
+    
+    static func showMessage(message: String) {
+        
+    }
 }

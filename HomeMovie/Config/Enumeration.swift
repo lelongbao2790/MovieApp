@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct Size {
+    static let kWidthBannerCell = 380.0
+    static let kHeightBannerCell = 205.0
+}

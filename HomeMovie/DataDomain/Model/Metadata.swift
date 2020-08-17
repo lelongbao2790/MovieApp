@@ -8,7 +8,9 @@
 
 import UIKit
 import ObjectMapper
-class Metadata: NSObject , Mappable{
+import RealmSwift
+
+class Metadata: Object , Mappable{
     var tag = ""
     var page = 0
     var totalRecord = 0

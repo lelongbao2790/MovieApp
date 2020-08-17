@@ -13,7 +13,7 @@ struct API {
     static let kBaseUrlSSL = "https://api-v2.hdviet.com/"
     static let kBaseUrl = "http://rest.hdviet.com/"
     static let kPosterUrl = "http://t.hdviet.com/thumbs/origins/%@"
-    static let kBannerUrl = "http://t.hdviet.com/backdrops/origins/%@"
+    static let kBannerUrl = "http://t.hdviet.com/backdrops/origins/"
     
     static let kLoginUrl = "user/login?email=%@&password=%@"
     static let kDetailUrl = "movie?movieid=%@"

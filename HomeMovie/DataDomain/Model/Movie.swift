@@ -8,8 +8,9 @@
 
 import UIKit
 import ObjectMapper
+import RealmSwift
 
-class Movie: NSObject, Mappable {
+class Movie: Object, Mappable {
 
     var movieId: Double = 0
     var movieName = ""
@@ -34,7 +35,7 @@ class Movie: NSObject, Mappable {
         rating              <- map["ImdbRating"]
         trailer             <- map["Trailer"]
         poster              <- map["NewPoster"]
-        banner              <- map["Banner"]
+        banner              <- map["Backdrop"]
         episode             <- map["Episode"]
         sequence            <- map["Sequence"]
     }

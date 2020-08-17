@@ -8,6 +8,12 @@
 
 import Foundation
 
+
+struct CommonData {
+    static let kDefaultNumber: Int = 0
+    static let kDefaultBannerTag = "moi-cap-nhat"
+}
+
 struct Tag {
     static let Features : Dictionary =
                         ["Mới cập nhật":"moi-cap-nhat", // show on banner
@@ -23,7 +29,6 @@ struct Tag {
                         "Tình cảm":"tinh-cam",
                         "Hoạt hình":"hoat-hinh",
                         "Anime":"anime",
-                        "Hoạt hình":"hoat-hinh",
                         "Âm nhạc":"am-nhac",
                         "Thể thao":"the-thao",
                         "Tâm lý":"tam-ly",
@@ -40,7 +45,6 @@ struct Tag {
                         "Phim lãng mạn":"lang-man",
                         "Phim trinh thám":"trinh-tham",
                         "Phim viễn tây":"vien-tay",
-                        "Phim chiếu rạp":"chieu-rap",
                         "Sắp chiếu":"sap-chieu",
                         "Thần thoại":"than-thoai"]
         
@@ -59,7 +63,6 @@ struct Tag {
                         "Tình cảm":"tinh-cam",
                         "Hoạt hình":"hoat-hinh",
                         "Anime":"anime",
-                        "Hoạt hình":"hoat-hinh",
                         "Âm nhạc":"am-nhac",
                         "Thể thao":"the-thao",
                         "Tâm lý":"tam-ly",
@@ -76,7 +79,7 @@ struct Tag {
                         "Phim trinh thám":"trinh-tham",
                         "Phim viễn tây":"vien-tay",
                         "Thần thoại":"than-thoai"]
-    
+
 }
 
 enum Genre : Int {
