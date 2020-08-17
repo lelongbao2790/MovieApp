@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
+import UIKit
 struct Size {
-    static let kWidthBannerCell = 380.0
-    static let kHeightBannerCell = 205.0
+    static let kWidthBannerCell: CGFloat = 380.0
+    static let kHeightBannerCell: CGFloat = 205.0
 }

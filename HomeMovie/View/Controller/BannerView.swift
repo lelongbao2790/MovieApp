@@ -18,6 +18,7 @@ class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDa
     func setDelegateDatasource() -> Void {
         self.delegate = self
         self.dataSource = self
+        self.reloadData()
         
     }
     
@@ -30,7 +31,7 @@ class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDa
                 if(isSuccess!) {
                     let rsMovie = value as! ResponseMovie
                     self.listMovies = rsMovie.data!.list as List<Movie>
-                    self.reloadData()
+                    self.setDelegateDatasource()
                     
                 } else {
                     // TODO: Show message login fail
@@ -53,7 +54,7 @@ class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
+        return CGSize(width: 380.0, height: 205.0)
         
     }
     
