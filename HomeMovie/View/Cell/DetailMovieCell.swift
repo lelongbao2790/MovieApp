@@ -9,5 +9,18 @@
 import UIKit
 
 class DetailMovieCell: UICollectionViewCell {
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var imgPoster: UIImageView!
     
+    var data: Movie? {
+        didSet {
+            guard let data = data else { return }
+            
+            if(data.poster.count > 0){
+                let url = URL.init(string: "\(API.kPosterUrl + data.poster)")! as URL
+                self.imgPoster.downloaded(from: url)
+                lbName.text = String(format: "   \(data.movieName)")
+            }
+        }
+    }
 }

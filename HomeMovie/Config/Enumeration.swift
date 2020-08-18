@@ -11,4 +11,6 @@ import UIKit
 struct Size {
     static let kWidthBannerCell: CGFloat = 380.0
     static let kHeightBannerCell: CGFloat = 205.0
+    static let kWidthPosterCell: CGFloat = 112.0
+    static let kHeightPosterCell: CGFloat = 154.0
 }

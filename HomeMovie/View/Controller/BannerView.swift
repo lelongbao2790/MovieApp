@@ -13,29 +13,23 @@ class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDa
     
     var listMovies = List<Movie>()
     
-    
     // MARK - Helper
     func setDelegateDatasource() -> Void {
         self.delegate = self
         self.dataSource = self
         self.reloadData()
-        
     }
     
-    func loadMovies() {
+    func loadMovies(page: Int) {
         BaseClient.shared.listMovieByGenre(
             genre: String(format:"\(Genre.Hot.rawValue)"),
             tag: CommonData.kDefaultBannerTag,
-            page:  String(format:"\(CommonData.kDefaultNumber)"),
+            page:  String(format:"\(page)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 if(isSuccess!) {
                     let rsMovie = value as! ResponseMovie
-                    self.listMovies = rsMovie.data!.list as List<Movie>
+                    self.listMovies =  rsMovie.data!.list as List<Movie>
                     self.setDelegateDatasource()
-                    
-                } else {
-                    // TODO: Show message login fail
-                    
                 }
             })
     }
@@ -49,17 +43,12 @@ class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDa
         let bannerCell: BannerCell = self.dequeueReusableCell(withReuseIdentifier: StoryboardId.BannerCellId, for: indexPath) as! BannerCell
         let movie = self.listMovies[indexPath.item]
         bannerCell.data = movie
-        
         return bannerCell
     }
     
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 380.0, height: 205.0)
+        return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
         
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    }
 }
+

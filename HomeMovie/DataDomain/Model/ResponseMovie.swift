@@ -13,7 +13,7 @@ import ObjectMapper
 class ResponseMovie: Object, Mappable {
     var error = 0
     var message = ""
-    var data : Datas?
+    var data: Datas?
     
     required convenience init?(map: Map) {
         self.init()

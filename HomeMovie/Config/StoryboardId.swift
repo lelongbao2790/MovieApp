@@ -17,7 +17,8 @@ struct StoryboardId {
     static let MainControllerId = "MainController"
     static let ParentControllerId = "ParentController"
     static let BannerCellId = "BannerCell"
-    static let DetailMovieCellId = "DetailMovieCellId"
+    static let DetailMovieCellId = "DetailMovieCell"
+    static let MovieCellId = "MovieCell"
     
     static let keyWindows =
     UIApplication.shared.connectedScenes

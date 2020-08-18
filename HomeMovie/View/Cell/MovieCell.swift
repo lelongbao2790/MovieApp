@@ -10,15 +10,28 @@ import UIKit
 
 class MovieCell: UITableViewCell {
 
+    // MARK - Properties
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var collectionMovie: MovieCollection!
+    
+    // MARK - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    }
+    
+    // MARK - Helper
+    func loadInformation(category: String, tag: String) -> Void {
+        lbTitle.text = category
+        collectionMovie.setDelegateDatasource()
+        collectionMovie.loadMovies(tagMovie: tag)
     }
 
+    // MARK - Action
+    @IBAction func showAll(_ sender: Any) {
+    }
 }

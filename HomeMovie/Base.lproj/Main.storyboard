@@ -161,14 +161,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="jjQ-Yb-aLn">
                                 <rect key="frame" x="0.0" y="-11" width="375" height="823"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITR-AX-8vZ">
-                                <rect key="frame" x="0.0" y="-84" width="375" height="896"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITR-AX-8vZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzO-3A-JI6">
-                                        <rect key="frame" x="0.0" y="32" width="375" height="1012"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="960"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-df-fYZ" customClass="BannerView" customModule="HomeMovie" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="90" width="375" height="205"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8kP-df-fYZ" customClass="BannerView" customModule="HomeMovie" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="205"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="205" id="ZBc-Cu-gKW"/>
@@ -239,11 +239,11 @@
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHy-09-4R4">
-                                                <rect key="frame" x="0.0" y="295" width="375" height="691"/>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FHy-09-4R4">
+                                                <rect key="frame" x="0.0" y="205" width="375" height="569"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="691" id="t8A-Ug-5EB"/>
+                                                    <constraint firstAttribute="height" constant="569" id="t8A-Ug-5EB"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="250" id="aSl-v9-xJI" customClass="MovieCell" customModule="HomeMovie" customModuleProvider="target">
@@ -266,7 +266,7 @@
                                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dld-fM-XGS" customClass="MovieCollection" customModule="HomeMovie" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="50" width="375" height="200"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VY1-UA-7lg">
+                                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VY1-UA-7lg">
                                                                         <size key="itemSize" width="128" height="201"/>
                                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -274,7 +274,7 @@
                                                                     </collectionViewFlowLayout>
                                                                     <cells>
                                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailMovieCell" id="aQd-db-KSK" customClass="DetailMovieCell" customModule="HomeMovie" customModuleProvider="target">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="201"/>
+                                                                            <rect key="frame" x="0.0" y="-0.66666666666666663" width="128" height="201"/>
                                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Myx-ka-KHS">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="201"/>
@@ -282,6 +282,10 @@
                                                                                 <subviews>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekY-CJ-N4o">
                                                                                         <rect key="frame" x="8" y="8" width="112" height="154"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="height" constant="154" id="ToR-H4-Kng"/>
+                                                                                            <constraint firstAttribute="width" constant="112" id="YmV-FF-ovz"/>
+                                                                                        </constraints>
                                                                                         <userDefinedRuntimeAttributes>
                                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -310,11 +314,15 @@
                                                                                 </constraints>
                                                                             </collectionViewCellContentView>
                                                                             <size key="customSize" width="128" height="201"/>
+                                                                            <connections>
+                                                                                <outlet property="imgPoster" destination="ekY-CJ-N4o" id="4g2-VN-88s"/>
+                                                                                <outlet property="lbName" destination="TE7-UD-7Dh" id="O74-ou-0Vu"/>
+                                                                            </connections>
                                                                         </collectionViewCell>
                                                                     </cells>
                                                                 </collectionView>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Rw-Wg-DGp">
-                                                                    <rect key="frame" x="286" y="5" width="89" height="30"/>
+                                                                    <rect key="frame" x="286" y="8" width="89" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="89" id="ksP-pf-0oZ"/>
                                                                         <constraint firstAttribute="height" constant="30" id="uXp-L3-BcE"/>
@@ -323,6 +331,9 @@
                                                                     <state key="normal" title="...">
                                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </state>
+                                                                    <connections>
+                                                                        <action selector="showAll:" destination="aSl-v9-xJI" eventType="touchUpInside" id="TBU-zu-6Hr"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
@@ -331,15 +342,23 @@
                                                                 <constraint firstItem="Dld-fM-XGS" firstAttribute="top" secondItem="yfK-kd-a4P" secondAttribute="bottom" constant="15" id="CWd-BB-M2l"/>
                                                                 <constraint firstItem="4Rw-Wg-DGp" firstAttribute="leading" secondItem="yfK-kd-a4P" secondAttribute="trailing" constant="23" id="IJr-Z4-kl4"/>
                                                                 <constraint firstItem="Dld-fM-XGS" firstAttribute="leading" secondItem="aaq-mx-g1Q" secondAttribute="leading" id="O1d-G8-68W"/>
-                                                                <constraint firstItem="4Rw-Wg-DGp" firstAttribute="top" secondItem="aaq-mx-g1Q" secondAttribute="top" constant="5" id="Wwq-Rf-gVr"/>
+                                                                <constraint firstItem="4Rw-Wg-DGp" firstAttribute="top" secondItem="aaq-mx-g1Q" secondAttribute="top" constant="8" id="Wwq-Rf-gVr"/>
                                                                 <constraint firstItem="yfK-kd-a4P" firstAttribute="top" secondItem="aaq-mx-g1Q" secondAttribute="top" constant="11" id="dJs-5j-fGD"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Dld-fM-XGS" secondAttribute="trailing" id="hI5-r8-QaH"/>
                                                                 <constraint firstItem="yfK-kd-a4P" firstAttribute="leading" secondItem="aaq-mx-g1Q" secondAttribute="leading" constant="20" id="ywg-gV-3mc"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <outlet property="collectionMovie" destination="Dld-fM-XGS" id="Pmi-Pb-6D6"/>
+                                                            <outlet property="lbTitle" destination="yfK-kd-a4P" id="P0D-l9-Rgk"/>
+                                                        </connections>
                                                     </tableViewCell>
                                                 </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="6cr-Lr-8qR" id="Lrv-69-dWm"/>
+                                                    <outlet property="delegate" destination="6cr-Lr-8qR" id="ZeY-1b-bZA"/>
+                                                </connections>
                                             </tableView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -348,7 +367,7 @@
                                             <constraint firstItem="8kP-df-fYZ" firstAttribute="leading" secondItem="qzO-3A-JI6" secondAttribute="leading" id="CX6-gK-jad"/>
                                             <constraint firstItem="FHy-09-4R4" firstAttribute="leading" secondItem="8kP-df-fYZ" secondAttribute="trailing" constant="-375" id="Sf1-Dq-Pbe"/>
                                             <constraint firstAttribute="trailing" secondItem="8kP-df-fYZ" secondAttribute="trailing" id="qFT-gb-r2A"/>
-                                            <constraint firstItem="8kP-df-fYZ" firstAttribute="top" secondItem="qzO-3A-JI6" secondAttribute="top" constant="90" id="s4K-OJ-o6T"/>
+                                            <constraint firstItem="8kP-df-fYZ" firstAttribute="top" secondItem="qzO-3A-JI6" secondAttribute="top" id="s4K-OJ-o6T"/>
                                             <constraint firstAttribute="trailing" secondItem="FHy-09-4R4" secondAttribute="trailing" id="wH2-YH-7jf"/>
                                         </constraints>
                                     </view>
@@ -357,12 +376,12 @@
                                 <constraints>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="trailing" secondItem="IEG-bL-xa2" secondAttribute="trailing" id="0fw-8o-6tE"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="leading" secondItem="ITR-AX-8vZ" secondAttribute="leading" id="Kzl-W9-CF5"/>
-                                    <constraint firstAttribute="bottom" secondItem="qzO-3A-JI6" secondAttribute="bottom" constant="-148" id="MOx-id-r9V"/>
+                                    <constraint firstAttribute="bottom" secondItem="qzO-3A-JI6" secondAttribute="bottom" constant="-200" id="MOx-id-r9V"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="leading" secondItem="IEG-bL-xa2" secondAttribute="leading" id="PZg-SZ-YDu"/>
-                                    <constraint firstItem="qzO-3A-JI6" firstAttribute="top" secondItem="ITR-AX-8vZ" secondAttribute="top" constant="32" id="WtJ-u9-W2V"/>
+                                    <constraint firstItem="qzO-3A-JI6" firstAttribute="top" secondItem="ITR-AX-8vZ" secondAttribute="top" id="WtJ-u9-W2V"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="bottom" secondItem="IEG-bL-xa2" secondAttribute="bottom" constant="148" id="aNS-so-9eu"/>
                                     <constraint firstItem="qzO-3A-JI6" firstAttribute="top" secondItem="IEG-bL-xa2" secondAttribute="top" constant="32" id="aTb-we-OD6"/>
-                                    <constraint firstAttribute="height" constant="896" id="ffp-oL-fWK"/>
+                                    <constraint firstAttribute="height" constant="812" id="ffp-oL-fWK"/>
                                     <constraint firstAttribute="trailing" secondItem="qzO-3A-JI6" secondAttribute="trailing" id="neL-WT-0dJ"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="kYF-1M-gFh"/>
@@ -389,6 +408,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bannerView" destination="8kP-df-fYZ" id="UgL-8W-2vK"/>
+                        <outlet property="tbvCategory" destination="FHy-09-4R4" id="A9L-UP-Qgn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BS8-gN-zc9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

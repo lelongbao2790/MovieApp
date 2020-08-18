@@ -7,30 +7,51 @@
 //
 
 import UIKit
+import RealmSwift
 
-class MovieCollection: UICollectionView {
+class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var listMovie: Array<Movie>? = nil
-
+    var listMovies = List<Movie>()
     
-    func loadListMovieFromJson(movies: Array<Movie>) -> Void {
-        listMovie = movies
-        self.reloadData()
-    }
-    
-    //-----------------
-    // MARK - UICollectionDelegate, UICollectionDataSource
-//    //-----------------
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//    }
-    
+   required init?(coder: NSCoder) {
+       super.init(coder: coder)
+   }
+   
+   // MARK - Helper
+   func setDelegateDatasource() -> Void {
+       self.delegate = self
+       self.dataSource = self
+       self.reloadData()
+   }
+   
+    func loadMovies(tagMovie: String) {
+       BaseClient.shared.listMovieByGenre(
+           genre: String(format:"\(Genre.Hot.rawValue)"),
+           tag: tagMovie,
+           page:  String(format:"\(CommonData.kDefaultNumber)"),
+           completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+               if(isSuccess!) {
+                   let rsMovie = value as! ResponseMovie
+                   self.listMovies =  rsMovie.data!.list as List<Movie>
+                   self.setDelegateDatasource()
+               }
+           })
+   }
+   
+   // MARK - UICollectionViewDelegate
+   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+       return self.listMovies.count
+   }
+   
+   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let detailCell: DetailMovieCell = self.dequeueReusableCell(withReuseIdentifier: StoryboardId.DetailMovieCellId, for: indexPath) as! DetailMovieCell
+       let movie = self.listMovies[indexPath.item]
+       detailCell.data = movie
+       return detailCell
+   }
+   
+   func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
+       
+   }
 }

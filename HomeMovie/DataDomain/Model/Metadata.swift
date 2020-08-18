@@ -12,9 +12,9 @@ import RealmSwift
 
 class Metadata: Object , Mappable{
     var tag = ""
-    var page = 0
-    var totalRecord = 0
-    var genre = 0
+    var page : Double = 0
+    var totalRecord : Double  = 0
+    var genre : Double = 0
     
     required convenience init?(map: Map) {
         self.init()
