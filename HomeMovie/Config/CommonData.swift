@@ -14,6 +14,75 @@ struct CommonData {
     static let kDefaultBannerTag = "moi-cap-nhat"
 }
 
+struct TitleMenu {
+    static let FeaturesTitleMenu : Array =
+    [
+    "Hot trong tháng",
+    "HDViệt đề cử",
+    "Hành động",
+    "Kinh dị",
+    "Hài",
+    "Chiến tranh",
+    "Khoa học viễn tưởng",
+    "Hình sự tội phạm",
+    "Võ thuật",
+    "Tình cảm",
+    "Hoạt hình",
+    "Anime",
+    "Âm nhạc",
+    "Thể thao",
+    "Tâm lý",
+    "Âu mỹ",
+    "Gia đình",
+    "Châu á",
+    "Hồng kông",
+    "Hàn quốc",
+    "Lịch sử",
+    "Tài liệu",
+    "Phim chiếu rạp",
+    "Phim bí ẩn",
+    "Phim cổ trang",
+    "Phim lãng mạn",
+    "Phim trinh thám",
+    "Phim viễn tây",
+    "Sắp chiếu",
+    "Thần thoại"]
+    
+    static let FeaturesTagMenu : Array =
+    [
+    "hot-trong-thang",
+    "hdviet-de-cu",
+    "hanh-dong",
+    "kinh-di",
+    "hai",
+    "chien-tranh",
+    "khoa-hoc-vien-tuong",
+    "hinh-su-toi-pham",
+    "vo-thuat",
+    "tinh-cam",
+    "hoat-hinh",
+    "anime",
+    "am-nhac",
+    "the-thao",
+    "tam-ly",
+    "au-my",
+    "gia-dinh",
+    "chau-a",
+    "hong-kong",
+    "han-quoc",
+    "lich-su",
+    "tai-lieu",
+    "chieu-rap",
+    "bi-an",
+    "co-trang",
+    "lang-man",
+    "trinh-tham",
+    "vien-tay",
+    "sap-chieu",
+    "than-thoai"]
+}
+
+
 struct Tag {
     static let Features : Dictionary =
                         ["Mới cập nhật":"moi-cap-nhat", // show on banner

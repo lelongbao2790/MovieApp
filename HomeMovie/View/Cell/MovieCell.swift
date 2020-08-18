@@ -26,9 +26,12 @@ class MovieCell: UITableViewCell {
     
     // MARK - Helper
     func loadInformation(category: String, tag: String) -> Void {
-        lbTitle.text = category
-        collectionMovie.setDelegateDatasource()
-        collectionMovie.loadMovies(tagMovie: tag)
+        DispatchQueue.main.async(execute: {
+            self.lbTitle.text = category
+            self.collectionMovie.setDelegateDatasource()
+            self.collectionMovie.loadMovies(tagMovie: tag)
+        })
+        
     }
 
     // MARK - Action

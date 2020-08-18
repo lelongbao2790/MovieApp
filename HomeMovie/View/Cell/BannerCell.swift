@@ -20,7 +20,8 @@ class BannerCell: UICollectionViewCell {
             
             if(data.banner.count > 0){
                 let url = URL.init(string: "\(API.kBannerUrl + data.banner)")! as URL
-                self.imgBanner.downloaded(from: url)
+                DataManager.shared.downloadImageUrl(imageView: self.imgBanner, from: url)
+                // self.imgBanner.downloaded(from: url)
                 lbName.text = String(format: "   \(data.movieName)") 
             }
         }

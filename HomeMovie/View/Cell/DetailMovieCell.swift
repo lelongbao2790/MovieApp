@@ -18,8 +18,9 @@ class DetailMovieCell: UICollectionViewCell {
             
             if(data.poster.count > 0){
                 let url = URL.init(string: "\(API.kPosterUrl + data.poster)")! as URL
-                self.imgPoster.downloaded(from: url)
-                lbName.text = String(format: "   \(data.movieName)")
+                DataManager.shared.downloadImageUrl(imageView: self.imgPoster, from: url)
+                //self.imgPoster.downloaded(from: url)
+                lbName.text = String(format: " \(data.movieName)")
             }
         }
     }
