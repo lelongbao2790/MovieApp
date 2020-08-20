@@ -16,6 +16,10 @@ extension UIViewController {
 struct StoryboardId {
     static let MainControllerId = "MainController"
     static let ParentControllerId = "ParentController"
+    static let FeatureFilmControllerId = "FeatureFilmController"
+    static let TagTableId = "TagTable"
+    static let TagCellId = "TagCell"
+    static let MovieInTagCellId = "MovieInTagCell"
     static let BannerCellId = "BannerCell"
     static let DetailMovieCellId = "DetailMovieCell"
     static let MovieCellId = "MovieCell"
