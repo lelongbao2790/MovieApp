@@ -25,7 +25,8 @@ struct StoryboardId {
     static let MoviesControllerId = "MoviesController"
     static let TagMoviesCellId = "TagMoviesCell"
     static let DetailTagMoviesCellId = "DetailTagMoviesCell"
-    static let ViewControllerId = "ViewController"
+    static let MovieViewControllerId = "MovieViewController"
+    static let MovieCollectionViewCellId = "MovieCollectionViewCell"
     
     //series movies id
     

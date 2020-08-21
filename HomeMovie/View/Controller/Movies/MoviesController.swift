@@ -7,17 +7,27 @@
 //
 
 import UIKit
+import RealmSwift
 
 class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-// These strings will be the data for the table view cells
-    let dataList: [String] = TitleMenu.FeaturesTitleMenu
-   
-
    let cellSpacingHeight: CGFloat = 10
-   
+    
+    //var dataList = List<Movie>()
+    let dataList:[String] = TitleMenu.FeaturesTitleMenu
+    
    @IBOutlet var tbvTagMovies: UITableView!
    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
    override func viewDidLoad() {
        super.viewDidLoad()
        
@@ -27,11 +37,6 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
    }
    
    // MARK: - Table View delegate methods
-   
-//   func numberOfSections(in tableView: UITableView) -> Int {
-//    return TitleMenu.FeaturesTitleMenu.count
-//   }
-   
    // There is just one row in every section
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        return TitleMenu.FeaturesTitleMenu.count
@@ -74,18 +79,17 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
    // method to run when table view cell is tapped
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print("you tap \(indexPath.row)")
-    let vc = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-    vc.navigationItem.largeTitleDisplayMode = .never
-    navigationController?.pushViewController(vc, animated: true)    
    }
 }
 
 extension MoviesController:TagMoviesCellProtocol{
-    func moviePage(at index: IndexPath) {
+    func moviePage(_ data: String,_ tag: String) {
         print(index)
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        vc.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = (storyboard?.instantiateViewController(identifier: StoryboardId.MovieViewControllerId) as? MovieViewController)!
+       
+        vc.Title = data
+        vc.tagMovie = tag
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

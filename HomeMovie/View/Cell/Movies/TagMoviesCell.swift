@@ -9,16 +9,19 @@
 import UIKit
 
 protocol TagMoviesCellProtocol : AnyObject {
-    func moviePage(at index:IndexPath)
+    func moviePage(_ data: String, _ tag: String)
 }
 
 class TagMoviesCell: UITableViewCell{
    @IBOutlet weak var lbTag:UILabel!
     @IBOutlet weak var collectionMovie: MainTagMoviesCollection!
     @IBOutlet weak var btnMore: UIButton!
-    
+    let tagMovie: String = ""
+
+    var indexPath: IndexPath!
     weak var delegate:TagMoviesCellProtocol?
-    var indexPath:IndexPath!
+    
+
     // MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,12 +42,10 @@ class TagMoviesCell: UITableViewCell{
     }
     
     //MARK: -Action
-
     @IBAction func showAllMovies(_ sender: Any) {
-//        let vc = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//        vc.navigationItem.largeTitleDisplayMode = .never
-//        present(UINavigationController(rootViewController: vc),animated: true)
-        delegate?.moviePage(at: indexPath)
+        let titleLabel = lbTag.text!
+        delegate?.moviePage(titleLabel, tagMovie)
+        
     }
    
 }

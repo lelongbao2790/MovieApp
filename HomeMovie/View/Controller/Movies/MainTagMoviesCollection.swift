@@ -46,14 +46,11 @@ class MainTagMoviesCollection: UICollectionView,UICollectionViewDelegate,UIColle
      let detailCell: DetailTagMoviesCell = self.dequeueReusableCell(withReuseIdentifier: StoryboardId.DetailTagMoviesCellId, for: indexPath) as! DetailTagMoviesCell
         let movie = self.listMovies[indexPath.item]
         detailCell.data = movie
-         //print(detailCell.data!)
         return detailCell
     }
     
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
-        
     }
-    
 
 }
