@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "2E3FF24E-3586-46F8-906B-D97CFF30C058"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EC4EB521-A0A5-4D70-BA5D-CCCA4A0FF37A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeMovie/View/Cell/MovieCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "loadInformation(category:tag:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EC4EB521-A0A5-4D70-BA5D-CCCA4A0FF37A - dc36942369150d85"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HomeMovie.MovieCell.loadInformation(category: Swift.String, tag: Swift.String) -&gt; ()"
+                  moduleName = "HomeMovie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thinhdang/Desktop/MovieApp/HomeMovie/View/Cell/MovieCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "EC4EB521-A0A5-4D70-BA5D-CCCA4A0FF37A - 5778acff80ed669d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in HomeMovie.MovieCell.loadInformation(category: Swift.String, tag: Swift.String) -&gt; ()"
+                  moduleName = "HomeMovie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/thinhdang/Desktop/MovieApp/HomeMovie/View/Cell/MovieCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "428385B0-E029-4B27-B027-5591DE1D9680"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeMovie/View/Controller/Movies/MainTagMoviesCollection.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

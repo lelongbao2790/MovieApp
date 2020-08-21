@@ -97,4 +97,10 @@ extension BaseClient {
         }
     }
     
+    /**
+    * Get list detail movie
+    * @param: movieId
+    * @return listData in callback
+    */
+    
 }
