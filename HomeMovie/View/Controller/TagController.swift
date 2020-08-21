@@ -24,13 +24,17 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     var genre: Int?
     var listMovies = List<Movie>()
+    var currentPageIndex: Int = 1
     
     //
     // MARK: Life Cycle Methods
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadMovies(pageIndex: 1)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadMovies(pageIndex: currentPageIndex)
     }
 
     
@@ -40,7 +44,7 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
     // MARK: Properties
     //
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.listMovies.count
+        return self.listMovies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -48,6 +52,14 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
         cell.data = listMovies[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row + 1 >= listMovies.count {
+            currentPageIndex += 1
+            loadMovies(pageIndex: currentPageIndex)
+        }
+    }
+    
     
     @IBAction func exit(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -67,6 +79,7 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
                     for item in listTemp {
                         self.listMovies.append(item)
                     }
+                    self.colTag.reloadData()
                 }
             })
     }
