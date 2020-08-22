@@ -469,27 +469,8 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="pe3-qH-2gD">
                                 <rect key="frame" x="0.0" y="-10" width="375" height="822"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="kSf-rI-8AZ">
-                                <rect key="frame" x="0.0" y="30" width="375" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Qkr-Ch-TpC"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Phim lẻ" id="VkD-0Z-Rw7"/>
-                                </items>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CategoryTable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pZs-cn-zNj">
-                                <rect key="frame" x="0.0" y="74" width="375" height="655"/>
+                                <rect key="frame" x="0.0" y="118" width="375" height="611"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TagCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TagCell" rowHeight="100" id="dx8-dv-ds6" customClass="TagCell" customModule="HomeMovie" customModuleProvider="target">
@@ -514,7 +495,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <segue destination="MGD-sX-bh4" kind="show" id="qsS-nq-9Qw"/>
+                                                        <action selector="gotoTagController:" destination="MsX-VS-TOB" eventType="touchUpInside" id="xpq-CQ-ssg"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -540,86 +521,59 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pZs-cn-zNj" firstAttribute="trailing" secondItem="wnF-gp-DgG" secondAttribute="trailing" id="1Bb-MZ-nVA"/>
-                            <constraint firstItem="kSf-rI-8AZ" firstAttribute="top" secondItem="Age-D9-p9Q" secondAttribute="top" constant="30" id="1EE-7n-Gw1"/>
                             <constraint firstItem="pZs-cn-zNj" firstAttribute="bottom" secondItem="wnF-gp-DgG" secondAttribute="bottom" id="2AS-fk-MWE"/>
-                            <constraint firstItem="kSf-rI-8AZ" firstAttribute="leading" secondItem="wnF-gp-DgG" secondAttribute="leading" id="2xk-dx-Lg1"/>
                             <constraint firstItem="pe3-qH-2gD" firstAttribute="bottom" secondItem="Age-D9-p9Q" secondAttribute="bottom" id="CMj-Ah-sgu"/>
                             <constraint firstItem="pZs-cn-zNj" firstAttribute="leading" secondItem="wnF-gp-DgG" secondAttribute="leading" id="H0c-NG-lLS"/>
                             <constraint firstAttribute="top" secondItem="pe3-qH-2gD" secondAttribute="top" constant="10" id="SfD-DM-xKL"/>
                             <constraint firstItem="wnF-gp-DgG" firstAttribute="trailing" secondItem="pe3-qH-2gD" secondAttribute="trailing" id="X7J-FO-TMd"/>
                             <constraint firstItem="pe3-qH-2gD" firstAttribute="leading" secondItem="wnF-gp-DgG" secondAttribute="leading" id="ZPc-iV-met"/>
-                            <constraint firstItem="kSf-rI-8AZ" firstAttribute="trailing" secondItem="wnF-gp-DgG" secondAttribute="trailing" id="u8U-Wk-3cy"/>
-                            <constraint firstItem="pZs-cn-zNj" firstAttribute="top" secondItem="kSf-rI-8AZ" secondAttribute="bottom" id="zE7-qx-6Q3"/>
+                            <constraint firstItem="pZs-cn-zNj" firstAttribute="top" secondItem="wnF-gp-DgG" secondAttribute="top" constant="30" id="mcu-91-jcH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wnF-gp-DgG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="101" title="Phim lẻ" image="phimle_icon" selectedImage="phimle_icon" id="BGR-HM-s4z"/>
+                    <navigationItem key="navigationItem" title="Phim lẻ" id="mB2-d9-4Ya"/>
                     <connections>
                         <outlet property="TbvTag" destination="pZs-cn-zNj" id="5Bc-T7-rip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R8b-wr-MZo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="989.60000000000002" y="101.97044334975369"/>
+            <point key="canvasLocation" x="1932" y="101.97044334975369"/>
         </scene>
         <!--Tag Controller-->
         <scene sceneID="kQ7-ew-47r">
             <objects>
                 <viewController storyboardIdentifier="TagController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MGD-sX-bh4" customClass="TagController" customModule="HomeMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H6F-Ks-cZp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="H0a-b8-gY0">
-                                <rect key="frame" x="0.0" y="-63" width="375" height="831"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="EZB-lh-c5o">
+                                <rect key="frame" x="0.0" y="-10" width="375" height="832"/>
                             </imageView>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="itu-Tf-Cfp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="mK1-bj-vAO"/>
-                                </constraints>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Phim lẻ" id="SVZ-M5-4to">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.turn.up.left" catalog="system" id="ZEN-vi-7zo">
-                                            <connections>
-                                                <action selector="exit:" destination="MGD-sX-bh4" id="Zcp-E6-1Cr"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-HJ-R48">
-                                <rect key="frame" x="0.0" y="44" width="375" height="680"/>
+                                <rect key="frame" x="0.0" y="54" width="375" height="714"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="y8v-n8-7gl">
-                                    <size key="itemSize" width="120" height="200"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="y8v-n8-7gl">
+                                    <size key="itemSize" width="180" height="260"/>
+                                    <size key="estimatedItemSize" width="180" height="260"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" restorationIdentifier="DetailMovieCell" reuseIdentifier="DetailMovieCell" id="4PR-90-Cb9" customClass="DetailMovieCell" customModule="HomeMovie" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="260"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" semanticContentAttribute="forceLeftToRight" insetsLayoutMarginsFromSafeArea="NO" id="U1Q-co-lnf">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="260"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X8Y-41-6ED">
-                                                    <rect key="frame" x="0.0" y="10" width="120" height="180"/>
+                                                    <rect key="frame" x="0.0" y="10" width="180" height="240"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="gF4-pk-agh"/>
-                                                        <constraint firstAttribute="height" constant="200" id="pdH-zh-FEU"/>
+                                                        <constraint firstAttribute="width" constant="180" id="gF4-pk-agh"/>
+                                                        <constraint firstAttribute="height" constant="240" id="pdH-zh-FEU"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -629,11 +583,11 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emp-Ln-0fb">
-                                                    <rect key="frame" x="0.0" y="166" width="120" height="24"/>
+                                                    <rect key="frame" x="0.0" y="226" width="180" height="24"/>
                                                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV5-cs-yqU">
-                                                    <rect key="frame" x="0.0" y="166" width="120" height="24"/>
+                                                    <rect key="frame" x="0.0" y="226" width="180" height="24"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -654,7 +608,7 @@
                                                 <constraint firstItem="emp-Ln-0fb" firstAttribute="leading" secondItem="UV5-cs-yqU" secondAttribute="leading" id="xSz-Og-IVE"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="120" height="200"/>
+                                        <size key="customSize" width="180" height="260"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.corner">
@@ -675,27 +629,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="H0a-b8-gY0" firstAttribute="top" secondItem="H6F-Ks-cZp" secondAttribute="top" constant="-63" id="13o-Kw-ZU6"/>
-                            <constraint firstItem="itu-Tf-Cfp" firstAttribute="leading" secondItem="KRT-E2-tGx" secondAttribute="leading" id="OMZ-hE-4Dp"/>
-                            <constraint firstItem="H0a-b8-gY0" firstAttribute="leading" secondItem="KRT-E2-tGx" secondAttribute="leading" id="T8v-o4-8hn"/>
+                            <constraint firstItem="rsK-HJ-R48" firstAttribute="top" secondItem="KRT-E2-tGx" secondAttribute="top" constant="10" id="ElW-D1-1GY"/>
+                            <constraint firstItem="EZB-lh-c5o" firstAttribute="top" secondItem="H6F-Ks-cZp" secondAttribute="top" constant="-10" id="IL3-WA-vkY"/>
                             <constraint firstItem="rsK-HJ-R48" firstAttribute="leading" secondItem="KRT-E2-tGx" secondAttribute="leading" id="Tfa-0z-bEw"/>
-                            <constraint firstItem="itu-Tf-Cfp" firstAttribute="top" secondItem="KRT-E2-tGx" secondAttribute="top" id="WXs-JU-QgB"/>
-                            <constraint firstAttribute="bottom" secondItem="H0a-b8-gY0" secondAttribute="bottom" constant="-10" id="c73-Oi-qRs"/>
+                            <constraint firstAttribute="bottom" secondItem="EZB-lh-c5o" secondAttribute="bottom" constant="-10" id="TjC-Mk-m4t"/>
+                            <constraint firstItem="EZB-lh-c5o" firstAttribute="leading" secondItem="H6F-Ks-cZp" secondAttribute="leading" id="aUk-k3-lvA"/>
+                            <constraint firstAttribute="trailing" secondItem="EZB-lh-c5o" secondAttribute="trailing" id="gj6-UK-qz4"/>
                             <constraint firstItem="KRT-E2-tGx" firstAttribute="trailing" secondItem="rsK-HJ-R48" secondAttribute="trailing" id="j1C-f5-YiM"/>
-                            <constraint firstItem="itu-Tf-Cfp" firstAttribute="trailing" secondItem="KRT-E2-tGx" secondAttribute="trailing" id="jfY-ex-0C3"/>
-                            <constraint firstItem="KRT-E2-tGx" firstAttribute="bottom" secondItem="rsK-HJ-R48" secondAttribute="bottom" id="rHV-Vq-Aa3"/>
-                            <constraint firstItem="rsK-HJ-R48" firstAttribute="top" secondItem="itu-Tf-Cfp" secondAttribute="bottom" id="x7E-Rd-BtT"/>
-                            <constraint firstItem="H0a-b8-gY0" firstAttribute="trailing" secondItem="KRT-E2-tGx" secondAttribute="trailing" id="ybf-vX-4d2"/>
+                            <constraint firstItem="KRT-E2-tGx" firstAttribute="bottom" secondItem="rsK-HJ-R48" secondAttribute="bottom" constant="10" id="rHV-Vq-Aa3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KRT-E2-tGx"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vsE-pS-Nf4"/>
                     <connections>
                         <outlet property="colTag" destination="rsK-HJ-R48" id="1Hc-iu-PMm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oj3-Ko-oaq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832.8" y="101.97044334975369"/>
+            <point key="canvasLocation" x="2775.1999999999998" y="101.97044334975369"/>
         </scene>
         <!--Detail Movie Controller-->
         <scene sceneID="2PW-F1-rcE">
@@ -705,23 +657,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I6c-ST-Jgs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="I6c-ST-Jgs">
+                                <rect key="frame" x="0.0" y="-10" width="375" height="832"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="I6c-ST-Jgs" firstAttribute="top" secondItem="22a-u6-Xcm" secondAttribute="top" id="505-uW-bAS"/>
-                            <constraint firstAttribute="bottom" secondItem="I6c-ST-Jgs" secondAttribute="bottom" id="Rss-Eq-lWG"/>
-                            <constraint firstItem="I6c-ST-Jgs" firstAttribute="leading" secondItem="p52-p4-v9V" secondAttribute="leading" id="nMx-2x-D4R"/>
-                            <constraint firstItem="I6c-ST-Jgs" firstAttribute="trailing" secondItem="p52-p4-v9V" secondAttribute="trailing" id="xSs-mf-qCp"/>
+                            <constraint firstItem="I6c-ST-Jgs" firstAttribute="top" secondItem="22a-u6-Xcm" secondAttribute="top" constant="-10" id="505-uW-bAS"/>
+                            <constraint firstAttribute="bottom" secondItem="I6c-ST-Jgs" secondAttribute="bottom" constant="-10" id="Rss-Eq-lWG"/>
+                            <constraint firstItem="I6c-ST-Jgs" firstAttribute="leading" secondItem="22a-u6-Xcm" secondAttribute="leading" id="nMx-2x-D4R"/>
+                            <constraint firstItem="I6c-ST-Jgs" firstAttribute="trailing" secondItem="22a-u6-Xcm" secondAttribute="trailing" id="xSs-mf-qCp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p52-p4-v9V"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ovk-dh-OfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2631.1999999999998" y="90.886699507389167"/>
+            <point key="canvasLocation" x="3573.5999999999999" y="90.886699507389167"/>
         </scene>
         <!--Parent Controller-->
         <scene sceneID="hKm-L0-BdB">
@@ -737,7 +689,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="xmc-FC-OSC" kind="relationship" relationship="viewControllers" id="ryD-gX-bOi"/>
-                        <segue destination="MsX-VS-TOB" kind="relationship" relationship="viewControllers" id="d0a-oa-D7S"/>
+                        <segue destination="Ay2-Pq-YV5" kind="relationship" relationship="viewControllers" id="d0a-oa-D7S"/>
                         <segue destination="sKK-Uh-pyb" kind="relationship" relationship="viewControllers" id="ftK-dI-6l1"/>
                         <segue destination="l4F-gN-TMp" kind="relationship" relationship="viewControllers" id="rwH-qf-eXN"/>
                     </connections>
@@ -746,9 +698,34 @@
             </objects>
             <point key="canvasLocation" x="-106" y="102"/>
         </scene>
+        <!--Phim lẻ-->
+        <scene sceneID="gN2-VK-Xpx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ay2-Pq-YV5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="101" title="Phim lẻ" image="phimle_icon" selectedImage="phimle_icon" id="BGR-HM-s4z"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="feW-oB-SiV">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MsX-VS-TOB" kind="relationship" relationship="rootViewController" id="ecR-gY-c7n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XrI-wm-pvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.60000000000002" y="101.97044334975369"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="arrow.turn.up.left" catalog="system" width="128" height="99"/>
         <image name="background" width="414" height="896"/>
         <image name="home_icon" width="15" height="15"/>
         <image name="homemovie_logo" width="150" height="150"/>

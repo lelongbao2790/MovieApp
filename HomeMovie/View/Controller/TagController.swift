@@ -16,15 +16,16 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
     //
     @IBOutlet weak var colTag: UICollectionView!
     var tagValue: String?
-    var tagName: String? {
+    var tagKey: String? {
         didSet {
-            print(self.tagName!)
-            self.tagValue = Tag.Features[tagName!]
+            print(self.tagKey!)
+            self.tagValue = Tag.Features[tagKey!]
         }
     }
     var genre: Int?
     var listMovies = List<Movie>()
     var currentPageIndex: Int = 1
+    var lastPageIndex: Int = 2
     
     //
     // MARK: Life Cycle Methods
@@ -36,12 +37,9 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
     override func viewWillAppear(_ animated: Bool) {
         loadMovies(pageIndex: currentPageIndex)
     }
-
-    
-
     
     //
-    // MARK: Properties
+    // MARK: UICollectionViewDelegate, UICollectionViewDataSource
     //
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.listMovies.count
@@ -54,16 +52,25 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.row + 1 >= listMovies.count {
-            currentPageIndex += 1
-            loadMovies(pageIndex: currentPageIndex)
+        if indexPath.row + 1 >= listMovies.count && currentPageIndex < lastPageIndex {
+            loadMovies(pageIndex: currentPageIndex + 1)
         }
     }
     
-    
-    @IBAction func exit(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: DetailMovieCell = self.colTag.cellForItem(at: indexPath) as! DetailMovieCell
+        let controller: DetailMovieController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+        controller.data = cell.data!
+        self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    //
+    // MARK: Actions
+    //
+//    @IBAction func exit(_ sender: UIBarButtonItem) {
+//        self.dismiss(animated: true, completion: nil)
+//    }
+    
     //
     // MARK: Private Methods
     //
@@ -80,6 +87,10 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
                         self.listMovies.append(item)
                     }
                     self.colTag.reloadData()
+                    self.currentPageIndex += 1
+//                    self.lastPageIndex = Int(rsMovie.data!.metadata!.totalRecord / rsMovie.data!.metadata!.field) * PaginationInfo.rateField // field = 1000 -> real field = 10 --> rate = 100
+                    // field = 0.0
+                    self.lastPageIndex = self.currentPageIndex + 1
                 }
             })
     }

@@ -40,38 +40,23 @@ class FeatureFilmController: UIViewController, UITableViewDataSource, UITableVie
     //
     // MARK: Actions
     //
-//    @IBAction func gotoTagController(_ sender: UIButton) {
-//        // print(sender.currentTitle) - TRUE
-//        let controller: DetailCategoryController = DetailCategoryController()
-//        controller.categoryName = sender.currentTitle
-//        let navController = self.tabBarController?.viewControllers?[0] as! UINavigationController
-////        navController.
-//////        navController.pushViewController(controller, animated: true)
-//    }
+    @IBAction func gotoTagController(_ sender: UIButton) {
+        let controller: TagController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.TagControllerId) as! TagController
+        controller.tagKey = sender.currentTitle
+        controller.genre = Genre.Feature.rawValue
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     //
     // MARK: Prepare -> Segues 
     //
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is TagController {
-            let controller = segue.destination as! TagController
-            let btnTag: UIButton = sender as! UIButton
-            controller.tagName = btnTag.currentTitle
-            controller.genre = Genre.Feature.rawValue
-        }
-    }
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is TagController {
+//            let controller = segue.destination as! TagController
+//            let btnTag: UIButton = sender as! UIButton
+//            controller.tagName = btnTag.currentTitle
+//            controller.genre = Genre.Feature.rawValue
+//        }
+//    }
 
 }

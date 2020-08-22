@@ -13,6 +13,7 @@ import RealmSwift
 class Metadata: Object , Mappable{
     var tag = ""
     var page : Double = 0
+    var field : Double = 0
     var totalRecord : Double  = 0
     var genre : Double = 0
     
@@ -23,6 +24,7 @@ class Metadata: Object , Mappable{
     func mapping(map: Map) {
         tag             <- map["tag"]
         page           <- map["page"]
+        field           <- map["field"]
         totalRecord     <- map["totalRecord"]
         genre            <- map["genre"]
         

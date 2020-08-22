@@ -14,15 +14,20 @@ extension UIViewController {
     }
 }
 struct StoryboardId {
+    // MAIN
     static let MainControllerId = "MainController"
     static let ParentControllerId = "ParentController"
-    static let FeatureFilmControllerId = "FeatureFilmController"
-    static let TagTableId = "TagTable"
-    static let TagCellId = "TagCell"
-    static let MovieInTagCellId = "MovieInTagCell"
     static let BannerCellId = "BannerCell"
     static let DetailMovieCellId = "DetailMovieCell"
     static let MovieCellId = "MovieCell"
+    // FEATURE
+    static let FeatureFilmControllerId = "FeatureFilmController"
+    static let TagTableId = "TagTable"
+    static let TagCellId = "TagCell"
+    static let TagControllerId = "TagController"
+    static let MovieInTagCellId = "MovieInTagCell"
+    // DETAIL MOVIE
+    static let DetailMovieControllerId = "DetailMovieController"
     
     static let keyWindows =
     UIApplication.shared.connectedScenes

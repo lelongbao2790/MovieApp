@@ -26,3 +26,6 @@ enum ErrorCode: Int {
     case Fail = 1
 }
 
+struct PaginationInfo {
+    static let rateField = 100 // field in Response = 100 * real field
+}

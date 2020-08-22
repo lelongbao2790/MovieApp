@@ -1,43 +1,41 @@
-////
-////  DetailMovie.swift
-////  HomeMovie
-////
-////  Created by Diep (Rocky) X.MAI on 8/21/20.
-////  Copyright © 2020 Bao (Brian) L. LE. All rights reserved.
-////
 //
-//import UIKit
-//import ObjectMapper
-//import RealmSwift
+//  DetailMovie.swift
+//  HomeMovie
 //
-//class DetailMovie: Object, Mappable {
+//  Created by Diep (Rocky) X.MAI on 8/21/20.
+//  Copyright © 2020 Bao (Brian) L. LE. All rights reserved.
 //
-//    var movieId: Double = 0
-//    var movieName = ""
-//    var cast = ""
-//    var plotVi = ""
-//    var rating: Double = 0
-//    var trailer = ""
-//    var poster = ""
-//    var banner = ""
-//    var episode: Int = 0
-//    var sequence: Int = 0
-//    
-//    required convenience init?(map: Map) {
-//        self.init()
-//    }
+
+import UIKit
+import ObjectMapper
+import RealmSwift
+
+class DetailMovie: Movie {
+
+    var knownAs = ""
+    var category = List<Category>()
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        knownAs             <- map["KnownAs"]
+        category             <- map["Category"]
+    }
+}
+
+
 //
-//    func mapping(map: Map) {
-//        movieId             <- map["MovieID"]
-//        movieName           <- map["MovieName"]
-//        cast                <- map["Cast"]
-//        plotVi              <- map["PlotVI"]
-//        rating              <- map["ImdbRating"]
-//        trailer             <- map["Trailer"]
-//        poster              <- map["NewPoster"]
-//        banner              <- map["Backdrop"]
-//        episode             <- map["Episode"]
-//        sequence            <- map["Sequence"]
-//    }
-//}
-//
+class Category: Object, Mappable {
+
+    var categoryId: Double = 0
+    var categoryName = ""
+
+    required convenience init?(map: Map) {
+        self.init()
+    }
+
+    func mapping(map: Map) {
+        categoryId             <- map["CategoryID"]
+        categoryName           <- map["CategoryName"]
+    }
+}
+

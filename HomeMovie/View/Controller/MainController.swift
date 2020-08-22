@@ -41,4 +41,16 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
         
         return movieCell
     }
+    
+    // TEST
+//    func getDetailMovie(movieId: String) {
+//        BaseClient.shared.detailMovie(movieId: movieId, completion: {
+//            (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+//            if(isSuccess!) {
+//                let resDetailMovie = value as! ResponseDetailMovie
+//                var a = 0
+//                a = 9
+//            }
+//        })
+//    }
 }

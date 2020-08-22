@@ -86,9 +86,11 @@ class BaseClient: NSObject {
                     urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
                     return urlHttpRequest
                     
-                case .detailInformation(movieId: _, token: let accessToken):
-                    urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
-                    return urlHttpRequest
+//                case .detailInformation(movieId: _, token: let accessToken):
+//                    urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
+//                    return urlHttpRequest
+                case .detailInformation(_, _):
+                    return urlHttpsRequest
                 }
         }
     }
