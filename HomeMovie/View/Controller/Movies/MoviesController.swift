@@ -79,6 +79,7 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
    // method to run when table view cell is tapped
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print("you tap \(indexPath.row)")
+
    }
 }
 
@@ -89,6 +90,8 @@ extension MoviesController:TagMoviesCellProtocol{
        
         vc.Title = data
         vc.tagMovie = tag
+        vc.genre = Genre.Feature.rawValue
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

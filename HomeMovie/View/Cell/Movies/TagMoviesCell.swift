@@ -16,7 +16,7 @@ class TagMoviesCell: UITableViewCell{
    @IBOutlet weak var lbTag:UILabel!
     @IBOutlet weak var collectionMovie: MainTagMoviesCollection!
     @IBOutlet weak var btnMore: UIButton!
-    let tagMovie: String = ""
+    let TagMovie: String = ""
 
     var indexPath: IndexPath!
     weak var delegate:TagMoviesCellProtocol?
@@ -44,7 +44,8 @@ class TagMoviesCell: UITableViewCell{
     //MARK: -Action
     @IBAction func showAllMovies(_ sender: Any) {
         let titleLabel = lbTag.text!
-        delegate?.moviePage(titleLabel, tagMovie)
+        self.collectionMovie.loadMovies(tagMovie: TagMovie)
+        delegate?.moviePage(titleLabel, TagMovie)
         
     }
    
