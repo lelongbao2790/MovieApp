@@ -20,12 +20,14 @@ struct StoryboardId {
     static let BannerCellId = "BannerCell"
     static let DetailMovieCellId = "DetailMovieCell"
     static let MovieCellId = "MovieCell"
-    // FEATURE
-    static let FeatureFilmControllerId = "FeatureFilmController"
+    // FEATURE & MOVIE FILM
+    static let TypeFilmControllerId = "TypeFilmController"
+    static let FeatureFilmTabBarIndex = 1
+    static let TelevisionFilmTabBarIndex = 2
     static let TagTableId = "TagTable"
     static let TagCellId = "TagCell"
     static let TagControllerId = "TagController"
-    static let MovieInTagCellId = "MovieInTagCell"
+    //static let MovieInTagCellId = "MovieInTagCell"
     // DETAIL MOVIE
     static let DetailMovieControllerId = "DetailMovieController"
     

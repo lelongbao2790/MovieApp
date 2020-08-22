@@ -13,16 +13,28 @@ class DetailMovieController: UIViewController {
     //
     // MARK: Properties
     //
-    var data: Movie? {
-        didSet {
-            print(self.data?.movieName)
-        }
-    }
+    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var knownAsLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var plotViText: UITextView!
+    //
+    var data: Movie?
+    var posterData: UIImage?
 
+    //
+    // MARK: Life-Cycle
+    //
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        posterImage.image = posterData
+        movieNameLabel.text = data?.movieName
+        knownAsLabel.text = data?.knownAs
+        rateLabel.text = String(format: "\(data?.rating as! Double) / 10.00")
+        plotViText.text = data?.plotVi
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 

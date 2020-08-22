@@ -61,15 +61,11 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
         let cell: DetailMovieCell = self.colTag.cellForItem(at: indexPath) as! DetailMovieCell
         let controller: DetailMovieController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
         controller.data = cell.data!
-        self.navigationController?.pushViewController(controller, animated: true)
+        if let image = cell.imgPoster.image {
+            controller.posterData = image
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
-    
-    //
-    // MARK: Actions
-    //
-//    @IBAction func exit(_ sender: UIBarButtonItem) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
     
     //
     // MARK: Private Methods
@@ -95,12 +91,5 @@ class TagController: UIViewController, UICollectionViewDelegate, UICollectionVie
             })
     }
     
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

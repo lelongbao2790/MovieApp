@@ -8,32 +8,42 @@
 
 import UIKit
 
-class FeatureFilmController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TypeFilmController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     //
     // MARK: Properties
     //
+    var typeFilm: TypeFilm = TypeFilm.Feature
     @IBOutlet weak var TbvTag: UITableView!
     
     //
     // MARK: Life Cycle Methods
     //
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        var typeFilmIndex: Int = self.tabBarController?.selectedIndex as! Int
+        if typeFilmIndex == StoryboardId.FeatureFilmTabBarIndex {
+            typeFilm = TypeFilm.Feature
+        }
+        else if typeFilmIndex == StoryboardId.TelevisionFilmTabBarIndex {
+            typeFilm = TypeFilm.Television
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.navigationController?.title = typeFilm.titleNavigation
     }
     
     //
     // MARK: UITableViewDataSource, UITableViewDelegate Methods
     //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return TitleMenu.FeaturesTagMenu.count
+        return typeFilm.TagKey.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TagCell = self.TbvTag.dequeueReusableCell(withIdentifier: StoryboardId.TagCellId, for: indexPath) as! TagCell
-        cell.title = TitleMenu.FeaturesTitleMenu[indexPath.row]
+        cell.title = typeFilm.TagValue[indexPath.row]
         return cell
     }
     

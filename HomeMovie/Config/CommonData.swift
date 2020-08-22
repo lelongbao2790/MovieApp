@@ -80,8 +80,98 @@ struct TitleMenu {
     "vien-tay",
     "sap-chieu",
     "than-thoai"]
+    
+    static let TelevisionTitleMenu : Array =
+    [
+    "Hot trong tháng",
+    "HDViệt đề cử",
+    "Hành động",
+    "Kinh dị",
+    "Hài",
+    "Chiến tranh",
+    "Khoa học viễn tưởng",
+    "Hình sự tội phạm",
+    "Võ thuật",
+    "Tình cảm",
+    "Hoạt hình",
+    "Anime",
+    "Âm nhạc",
+    "Thể thao",
+    "Tâm lý",
+    "Âu mỹ",
+    "Gia đình",
+    "Châu á",
+    "Hồng kông",
+    "Hàn quốc",
+    "Lịch sử",
+    "Tài liệu",
+    "Phim bí ẩn",
+    "Phim cổ trang",
+    "Phim lãng mạn",
+    "Phim trinh thám",
+    "Phim viễn tây",
+    "Thần thoại"]
+    
+    static let TelevisionTagMenu : Array =
+    [
+    "hot-trong-thang",
+    "hdviet-de-cu",
+    "hanh-dong",
+    "kinh-di",
+    "hai",
+    "chien-tranh",
+    "khoa-hoc-vien-tuong",
+    "hinh-su-toi-pham",
+    "vo-thuat",
+    "tinh-cam",
+    "hoat-hinh",
+    "anime",
+    "am-nhac",
+    "the-thao",
+    "tam-ly",
+    "au-my",
+    "gia-dinh",
+    "chau-a",
+    "hong-kong",
+    "han-quoc",
+    "lich-su",
+    "tai-lieu",
+    "bi-an",
+    "co-trang",
+    "lang-man",
+    "trinh-tham",
+    "vien-tay",
+    "than-thoai"]
 }
 
+enum TypeFilm {
+    case Feature
+    case Television
+    var TagKey: Array<String> {
+        switch self {
+        case .Feature:
+            return Array(Tag.Features.values)
+        case .Television:
+            return Array(Tag.TelevisionSeries.values)
+        }
+    }
+    var TagValue: Array<String> {
+        switch self {
+        case .Feature:
+            return Array(Tag.Features.keys)
+        case .Television:
+            return Array(Tag.TelevisionSeries.keys)
+        }
+    }
+    var titleNavigation: String {
+        switch self {
+        case .Feature:
+            return "Phim Chiếu Rạp"
+        case .Television:
+            return "Phim Truyền Hình"
+        }
+    }
+}
 
 struct Tag {
     static let Features : Dictionary =
@@ -148,7 +238,6 @@ struct Tag {
                         "Phim trinh thám":"trinh-tham",
                         "Phim viễn tây":"vien-tay",
                         "Thần thoại":"than-thoai"]
-
 }
 
 enum Genre : Int {

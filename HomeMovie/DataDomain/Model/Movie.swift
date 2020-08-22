@@ -14,6 +14,7 @@ class Movie: Object, Mappable {
 
     var movieId: Double = 0
     var movieName = ""
+    var knownAs = ""
     var cast = ""
     var plotVi = ""
     var rating: Double = 0
@@ -30,6 +31,7 @@ class Movie: Object, Mappable {
     func mapping(map: Map) {
         movieId             <- map["MovieID"]
         movieName           <- map["MovieName"]
+        knownAs             <- map["KnownAs"]
         cast                <- map["Cast"]
         plotVi              <- map["PlotVI"]
         rating              <- map["ImdbRating"]

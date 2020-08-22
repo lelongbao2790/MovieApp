@@ -97,34 +97,6 @@ extension BaseClient {
         }
     }
     
-    /**
-     * Get detail movie
-     * @param: movieId
-     * @return detailMovie in callback
-     */
-    func detailMovie(movieId: String, completion:@escaping ServiceResponse) {
-        DispatchQueue.global(qos: .background).async {
-            // Run on background
-            let request = Services.detailInformation(movieId: movieId, token: self.accessToken!) as URLRequestConvertible
-            Alamofire.request(request)
-                    .responseObject { (response: DataResponse<ResponseDetailMovie>) in
-                    switch response.result {
-                    case let .success(data):
-                        DispatchQueue.main.async {
-                            // Run on main thread
-                            completion(true, nil, data);
-                        }
-                        break
-
-                    case let .failure(error):
-                        DispatchQueue.main.async {
-                            // Run on main thread
-                            completion(false, error as NSError?, nil);
-                        }
-                        break
-                    }
-            }
-        }
-    }
+ 
     
 }

@@ -29,3 +29,5 @@ enum ErrorCode: Int {
 struct PaginationInfo {
     static let rateField = 100 // field in Response = 100 * real field
 }
+
+
