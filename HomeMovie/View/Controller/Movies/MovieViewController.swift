@@ -13,11 +13,19 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
 
 
     @IBOutlet weak var collectionMovie: UICollectionView!
-   var Title: String = ""
-        var tagMovie: String = ""
-        var listMovies = List<Movie>()
+
+     var tagMovie: String?
+    var Title: String? {
+        didSet {
+            print(self.Title!)
+            self.tagMovie = Tag.Features[Title!]
+        }
+    }
+   
+    var listMovies = List<Movie>()
     var genre:Int = 0
     var currentPage: Int = 1
+    
     override func viewDidLoad() {
             super.viewDidLoad()
        
@@ -25,7 +33,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             // Do any additional setup after loading the view.
         }
     override func viewWillAppear(_ animated: Bool) {
-         self.loadMovies(tagMovie: tagMovie, pageNumber: currentPage)
+         self.loadMovies(tagMovie: tagMovie!, pageNumber: currentPage)
         collectionMovie.dataSource = self
     
     }
@@ -85,7 +93,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             print("list movie \(listMovies[indexPath.item].movieName)")
             if(indexPath.row == listMovies.count-1){
                 //
-                loadMovies(tagMovie: tagMovie, pageNumber: (listMovies.count/10) + 1)
+                loadMovies(tagMovie: tagMovie!, pageNumber: (listMovies.count/10) + 1)
             }
                 return cell
            }
