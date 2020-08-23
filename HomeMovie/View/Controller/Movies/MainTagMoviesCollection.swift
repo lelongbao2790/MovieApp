@@ -10,13 +10,15 @@ import UIKit
 import RealmSwift
 
 class MainTagMoviesCollection: UICollectionView,UICollectionViewDelegate,UICollectionViewDataSource {
-    
+
+    var typeMovie: TypeMovies!
     //MARK: -Properties
     var listMovies = List<Movie>()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+ 
     //MARK: -Helper
     func setDelegateDatasource() -> Void {
         self.delegate = self
@@ -25,8 +27,22 @@ class MainTagMoviesCollection: UICollectionView,UICollectionViewDelegate,UIColle
     }
     
     func loadMovies(tagMovie: String) {
-        BaseClient.shared.listMovieByGenre(
-            genre: String(format:"\(Genre.Feature.rawValue)"),
+        switch typeMovie {
+        case .Feature :
+            BaseClient.shared.listMovieByGenre(
+                      genre: String(format:"\(Genre.Feature.rawValue)"),
+                      tag: tagMovie,
+                      page:  String(format:"\(CommonData.kDefaultNumber)"),
+                      completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                          if(isSuccess!) {
+                              let rsMovie = value as! ResponseMovie
+                              self.listMovies =  rsMovie.data!.list as List<Movie>
+                              self.setDelegateDatasource()
+                          }
+                      })
+        case .Television:
+            BaseClient.shared.listMovieByGenre(
+            genre: String(format:"\(Genre.Television.rawValue)"),
             tag: tagMovie,
             page:  String(format:"\(CommonData.kDefaultNumber)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
@@ -36,7 +52,11 @@ class MainTagMoviesCollection: UICollectionView,UICollectionViewDelegate,UIColle
                     self.setDelegateDatasource()
                 }
             })
+        default:
+            break
+    
     }
+}
     //MARK: -Delegate and Datasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.listMovies.count

@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    var typeMovie: TypeMovies!
    let cellSpacingHeight: CGFloat = 10
     
     //var dataList = List<Movie>()
@@ -26,6 +26,14 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        let typeFilmIndex: Int = self.tabBarController!.selectedIndex
+              if typeFilmIndex == StoryboardId.FeatureMoviesId {
+                  typeMovie = TypeMovies.Feature
+              }
+              else if typeFilmIndex == StoryboardId.TelevisionId {
+                  typeMovie = TypeMovies.Television
+              }
     }
     
    override func viewDidLoad() {
@@ -34,6 +42,9 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
        // These tasks can also be done in IB if you prefer.
        tbvTagMovies.delegate = self
        tbvTagMovies.dataSource = self
+    
+  
+    
    }
    
    // MARK: - Table View delegate methods
@@ -89,9 +100,6 @@ extension MoviesController:TagMoviesCellProtocol{
         let vc = (storyboard?.instantiateViewController(identifier: StoryboardId.MovieViewControllerId) as? MovieViewController)!
        
         vc.Title = data
-        //vc.tagMovie = tag
-        vc.genre = Genre.Feature.rawValue
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -15,20 +15,24 @@ extension UIViewController {
 }
 struct StoryboardId {
     //main page id
-    static let MainControllerId = "MainController"
+    static let MainControllerId = "MainController" //main
     static let ParentControllerId = "ParentController"
-    static let BannerCellId = "BannerCell"
-    static let DetailMovieCellId = "DetailMovieCell"
-    static let MovieCellId = "MovieCell"
+    static let BannerCellId = "BannerCell" //banner cell
+    static let DetailMovieCellId = "DetailMovieCell" //collection cell
+    static let MovieCellId = "MovieCell" //table view cell
     
-    //movies page id
-    static let MoviesControllerId = "MoviesController"
-    static let TagMoviesCellId = "TagMoviesCell"
-    static let DetailTagMoviesCellId = "DetailTagMoviesCell"
+    //tag movies id
+    static let MoviesControllerId = "MoviesController" //main movies
+    static let TagMoviesCellId = "TagMoviesCell" //table view cell
+    static let DetailTagMoviesCellId = "DetailTagMoviesCell" //colection view cell
+    
+    //detail detail movies id
     static let MovieViewControllerId = "MovieViewController"
     static let MovieCollectionViewCellId = "MovieCollectionViewCell"
     
-    //series movies id
+    //page ig
+    static let FeatureMoviesId = 1
+    static let TelevisionId = 2
     
     
     

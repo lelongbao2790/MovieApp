@@ -23,7 +23,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
    
     var listMovies = List<Movie>()
-    var genre:Int = 0
+    var genre:Int?
     var currentPage: Int = 1
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         
     private func loadMovies(tagMovie: String,pageNumber: Int) {
             BaseClient.shared.listMovieByGenre(
-                genre: String(format:"\(self.genre)"),
+                genre: String(format:"\(String(describing: genre))"),
                 tag: tagMovie,
                 page:  String(format:"\(pageNumber)"),
                 completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in

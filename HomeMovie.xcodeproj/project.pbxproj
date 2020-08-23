@@ -173,13 +173,6 @@
 			path = Movies;
 			sourceTree = "<group>";
 		};
-		4D1C0A3524ED21A100DB8B35 /* SeriesMovies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SeriesMovies;
-			sourceTree = "<group>";
-		};
 		4D1C0A3824ED233E00DB8B35 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,14 +181,6 @@
 				4D51E08524EFC7E700259DCC /* MovieCollectionViewCell.swift */,
 			);
 			path = Movies;
-			sourceTree = "<group>";
-		};
-		4D1C0A3924ED234900DB8B35 /* SeriesMovies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SeriesMovies;
-			path = "SeriesMovíe";
 			sourceTree = "<group>";
 		};
 		60E0DDDDDD577E6DCBEF85C2 /* Pods */ = {
@@ -326,7 +311,6 @@
 		99328E4B24DD4BF800ED7473 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4D1C0A3524ED21A100DB8B35 /* SeriesMovies */,
 				4D1C0A3424ED219000DB8B35 /* Movies */,
 				99328E6124DD542300ED7473 /* MainController.swift */,
 				995D430C24E3F87B0030C896 /* MovieCollection.swift */,
@@ -340,7 +324,6 @@
 		99328E4C24DD4BF800ED7473 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				4D1C0A3924ED234900DB8B35 /* SeriesMovies */,
 				4D1C0A3824ED233E00DB8B35 /* Movies */,
 				995D430E24E3F8970030C896 /* DetailMovieCell.swift */,
 				995D431224E3F8B80030C896 /* MovieCell.swift */,

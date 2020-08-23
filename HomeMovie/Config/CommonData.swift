@@ -84,6 +84,40 @@ struct TitleMenu {
 
 
 struct Tag {
+    static let hot: Dictionary =
+    ["Mới cập nhật":"moi-cap-nhat", // show on banner
+    "Hot trong tháng":"hot-trong-thang",
+    "HDViệt đề cử":"hdviet-de-cu",
+    "Hành động":"hanh-dong",
+    "Kinh dị":"kinh-di",
+    "Hài":"hai",
+    "Chiến tranh":"chien-tranh",
+    "Khoa học viễn tưởng":"khoa-hoc-vien-tuong",
+    "Hình sự tội phạm":"hinh-su-toi-pham",
+    "Võ thuật":"vo-thuat",
+    "Tình cảm":"tinh-cam",
+    "Hoạt hình":"hoat-hinh",
+    "Anime":"anime",
+    "Âm nhạc":"am-nhac",
+    "Thể thao":"the-thao",
+    "Tâm lý":"tam-ly",
+    "Âu mỹ":"au-my",
+    "Gia đình":"gia-dinh",
+    "Châu á":"chau-a",
+    "Hồng kông":"hong-kong",
+    "Hàn quốc":"han-quoc",
+    "Lịch sử":"lich-su",
+    "Tài liệu":"tai-lieu",
+    "Phim chiếu rạp":"chieu-rap",
+    "Phim bí ẩn":"bi-an",
+    "Phim cổ trang":"co-trang",
+    "Phim lãng mạn":"lang-man",
+    "Phim trinh thám":"trinh-tham",
+    "Phim viễn tây":"vien-tay",
+    "Sắp chiếu":"sap-chieu",
+    "Thần thoại":"than-thoai"]
+    
+    
     static let Features : Dictionary =
                         ["Mới cập nhật":"moi-cap-nhat", // show on banner
                         "Hot trong tháng":"hot-trong-thang",
@@ -155,4 +189,45 @@ enum Genre : Int {
     case Hot = 0
     case Feature = 1
     case Television = 2
+}
+
+enum TypeMovies {
+    case Hot
+    case Feature
+    case Television
+    var TagValues: Array<String>{
+        switch self {
+        case .Feature:
+            return Array(Tag.Features.values)
+        case .Television:
+            return Array(Tag.TelevisionSeries.values)
+        case .Hot:
+            return Array(Tag.hot.values)
+        }
+    }
+    
+    var TagKeys: Array<String>{
+        switch self {
+        case .Feature:
+            return Array(Tag.Features.keys)
+        case .Television:
+            return Array(Tag.TelevisionSeries.keys)
+        case .Hot:
+            return Array(Tag.hot.keys)
+        }
+    }
+    
+    var titleTypeMovies: String {
+        switch self {
+        case .Feature:
+            return "Movies"
+        case .Television:
+            return "Series Movies"
+        case .Hot:
+            return "Hot"
+        }
+    }
+    
+    static let allTypeMovies = [Hot, Feature, Television]
+  
 }
