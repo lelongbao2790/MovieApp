@@ -38,6 +38,7 @@ class TagMoviesCell: UITableViewCell{
             self.lbTag.text = category
             self.collectionMovie.setDelegateDatasource()
             self.collectionMovie.loadMovies(tagMovie: tag)
+            
         })
     }
     

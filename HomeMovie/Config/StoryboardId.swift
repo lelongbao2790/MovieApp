@@ -34,7 +34,8 @@ struct StoryboardId {
     static let FeatureMoviesId = 1
     static let TelevisionId = 2
     
-    
+    //detail page
+    static let DetailMovieControllerId = "DetailMovieController"
     
     static let keyWindows =
     UIApplication.shared.connectedScenes

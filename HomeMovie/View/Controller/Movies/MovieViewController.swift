@@ -35,11 +35,12 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewWillAppear(_ animated: Bool) {
          self.loadMovies(tagMovie: tagMovie!, pageNumber: currentPage)
         collectionMovie.dataSource = self
-    
+        collectionMovie.delegate = self
     }
         
         
     private func loadMovies(tagMovie: String,pageNumber: Int) {
+      
             BaseClient.shared.listMovieByGenre(
                 genre: String(format:"\(String(describing: genre))"),
                 tag: tagMovie,
@@ -97,6 +98,15 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             }
                 return cell
            }
-}
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            print("you tap \(indexPath)")
+//        let vc = (storyboard?.instantiateViewController(identifier: StoryboardId.DetailMovieControllerId) as? DetailMovieController)!
+//              
+//               //vc.Title = data
+//               self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
 
 

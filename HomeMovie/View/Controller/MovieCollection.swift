@@ -54,4 +54,11 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
        return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
        
    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("you tap \(indexPath)")
+//    let vc = (storyboard?.instantiateViewController(identifier: StoryboardId.DetailMovieControllerId) as? DetailMovieController)!
+//          
+//           //vc.Title = data
+//           self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

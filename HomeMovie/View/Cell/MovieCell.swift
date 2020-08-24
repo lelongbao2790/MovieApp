@@ -30,6 +30,7 @@ class MovieCell: UITableViewCell {
             self.lbTitle.text = category
             self.collectionMovie.setDelegateDatasource()
             self.collectionMovie.loadMovies(tagMovie: tag)
+      
         })
         
     }
