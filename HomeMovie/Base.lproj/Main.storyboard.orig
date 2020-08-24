@@ -230,7 +230,11 @@
                                                                                         </constraints>
                                                                                     </view>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TE7-UD-7Dh">
+<<<<<<< HEAD
                                                                                         <rect key="frame" x="0.0" y="188" width="128" height="32"/>
+=======
+                                                                                        <rect key="frame" x="0.0" y="169" width="128" height="24"/>
+>>>>>>> oscar
                                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="32" id="ALg-Ce-dnc"/>
@@ -240,6 +244,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                 </subviews>
+<<<<<<< HEAD
                                                                             </view>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="trailing" secondItem="ekY-CJ-N4o" secondAttribute="trailing" id="1IO-yl-a44"/>
@@ -253,6 +258,22 @@
                                                                                 <constraint firstAttribute="bottom" secondItem="uYH-KL-MPi" secondAttribute="bottom" id="uYp-N3-Rg5"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="ekY-CJ-N4o" secondAttribute="bottom" id="vNH-ul-WGB"/>
                                                                             </constraints>
+=======
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="trailing" secondItem="ekY-CJ-N4o" secondAttribute="trailing" id="1IO-yl-a44"/>
+                                                                                    <constraint firstItem="ekY-CJ-N4o" firstAttribute="leading" secondItem="Myx-ka-KHS" secondAttribute="leading" id="82B-DE-9Gk"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="TE7-UD-7Dh" secondAttribute="trailing" id="Gb5-Bm-njO"/>
+                                                                                    <constraint firstItem="uYH-KL-MPi" firstAttribute="leading" secondItem="Myx-ka-KHS" secondAttribute="leading" id="JpF-8Q-bWS"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="uYH-KL-MPi" secondAttribute="trailing" id="RMc-DO-gqf"/>
+                                                                                    <constraint firstItem="TE7-UD-7Dh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Myx-ka-KHS" secondAttribute="leading" constant="20" symbolic="YES" id="ZTl-Qf-uPh"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="TE7-UD-7Dh" secondAttribute="bottom" id="saq-Mt-nUF"/>
+                                                                                    <constraint firstItem="ekY-CJ-N4o" firstAttribute="top" secondItem="Myx-ka-KHS" secondAttribute="top" id="t0S-aA-Xcy"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="uYH-KL-MPi" secondAttribute="bottom" id="uYp-N3-Rg5"/>
+                                                                                    <constraint firstAttribute="bottom" secondItem="ekY-CJ-N4o" secondAttribute="bottom" id="vNH-ul-WGB"/>
+                                                                                </constraints>
+                                                                            </collectionViewCellContentView>
+                                                                            <size key="customSize" width="128" height="201"/>
+>>>>>>> oscar
                                                                             <connections>
                                                                                 <outlet property="imgPoster" destination="ekY-CJ-N4o" id="4g2-VN-88s"/>
                                                                                 <outlet property="lbName" destination="TE7-UD-7Dh" id="O74-ou-0Vu"/>

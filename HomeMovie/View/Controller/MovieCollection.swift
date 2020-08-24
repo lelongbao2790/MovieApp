@@ -55,7 +55,6 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
     let detailCell: DetailMovieCell = self.dequeueReusableCell(withReuseIdentifier: StoryboardId.DetailMovieCellId, for: indexPath) as! DetailMovieCell
        let movie = self.listMovies[indexPath.item]
        detailCell.data = movie
-    
        return detailCell
    }
 
