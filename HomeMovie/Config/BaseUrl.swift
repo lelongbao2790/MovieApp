@@ -17,7 +17,7 @@ struct API {
     
     static let kLoginUrl = "user/login?email=%@&password=%@"
     static let kDetailUrl = "movie?movieid=%@"
-    static let kListMovieByGenre = "api/v3/movie/filter?genre=%d&tag=%@&page=%d&limit=0"
-    static let kPlayUrl = "movie/play?movieid=%@&accesstokenkey=%@&ep=%d"
+    static let kListMovieByGenre = "api/v3/movie/filter?genre=%@&tag=%@&page=%@&limit=0"
+    static let kPlayUrl = "movie/play?movieid=%@&accesstokenkey=%@&ep=%@"
     static let kSearchUrl = "api/v3/search?keyword=%@&page=1&limit=100"
 }

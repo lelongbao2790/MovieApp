@@ -36,7 +36,7 @@ class BannerDetailCell: UITableViewCell {
     
     func loadBannerMovies(controller: MainController) {
         BaseClient.shared.listMovieByGenre(
-            genre: String(format:"\(Genre.Hot.rawValue)"),
+            genre: String(format:"\(Genre.Television.rawValue)"),
             tag: CommonData.kDefaultBannerTag,
             page:  String(format:"\(CommonData.kDefaultNumber + 1)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
@@ -46,12 +46,8 @@ class BannerDetailCell: UITableViewCell {
                     DispatchQueue.main.async {
                         // Run on main thread
                         self.bannerCollectionView.reloadData()
-                        self.bannerCollectionView.performBatchUpdates({ [weak self] in
-                            let visibleItems = self!.bannerCollectionView.indexPathsForVisibleItems
-                            self!.bannerCollectionView.reloadItems(at: visibleItems)
-                        }, completion: { (_) in
-                            self.bannerCollectionView.reloadData()   
-                        })
+                        self.bannerCollectionView!.collectionViewLayout.invalidateLayout()
+                        self.bannerCollectionView!.layoutSubviews()
                     }
                     
                 }

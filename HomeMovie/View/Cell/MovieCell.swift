@@ -51,7 +51,7 @@ class MovieCell: UITableViewCell {
     
     func loadMovies(tagMovie: String, controller: MainController) {
         BaseClient.shared.listMovieByGenre(
-            genre: String(format:"\(Genre.Hot.rawValue)"),
+            genre: String(format:"\(Genre.Feature.rawValue)"),
             tag: tagMovie,
             page:  String(format:"\(CommonData.kDefaultNumber)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
@@ -61,6 +61,8 @@ class MovieCell: UITableViewCell {
                  DispatchQueue.main.async {
                      // Run on main thread
                     self.collectionMovie.reloadData()
+                    self.collectionMovie!.collectionViewLayout.invalidateLayout()
+                    self.collectionMovie!.layoutSubviews()
                  }
                 }
             })
