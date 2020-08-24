@@ -17,6 +17,7 @@ struct CommonData {
 struct TitleMenu {
     static let FeaturesTitleMenu : Array =
     [
+    "Mới cập nhật",
     "Hot trong tháng",
     "HDViệt đề cử",
     "Hành động",
@@ -50,6 +51,7 @@ struct TitleMenu {
     
     static let FeaturesTagMenu : Array =
     [
+    "moi-cap-nhat",
     "hot-trong-thang",
     "hdviet-de-cu",
     "hanh-dong",

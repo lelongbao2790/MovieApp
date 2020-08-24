@@ -17,6 +17,8 @@
 		4DD4B12324EEA87800ABDA62 /* MainTagMoviesCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD4B12224EEA87800ABDA62 /* MainTagMoviesCollection.swift */; };
 		6333D5B5A271D8F6EF0096CC /* Pods_HomeMovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B13B5502955B012951ED12 /* Pods_HomeMovieUITests.framework */; };
 		8194D242DF59934D68F4C9A0 /* Pods_HomeMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEBEE6D03970B11D04D5755 /* Pods_HomeMovie.framework */; };
+		99165AA924F361DB00446281 /* BannerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99165AA824F361DB00446281 /* BannerDetailCell.swift */; };
+		99165AAB24F3631100446281 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99165AAA24F3631100446281 /* BannerView.swift */; };
 		99328E0C24DD4B4100ED7473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99328E0B24DD4B4100ED7473 /* AppDelegate.swift */; };
 		99328E0E24DD4B4100ED7473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99328E0D24DD4B4100ED7473 /* SceneDelegate.swift */; };
 		99328E1324DD4B4100ED7473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99328E1124DD4B4100ED7473 /* Main.storyboard */; };
@@ -38,7 +40,6 @@
 		9933275024E2AD9400A8F315 /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9933274F24E2AD9400A8F315 /* CustomField.swift */; };
 		9938075724E0F4C1006A1C5A /* CommonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9938075624E0F4C1006A1C5A /* CommonData.swift */; };
 		993D932924E3EE630045E17A /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D932824E3EE630045E17A /* Loading.swift */; };
-		995D430B24E3F8330030C896 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D430A24E3F8330030C896 /* BannerView.swift */; };
 		995D430D24E3F87B0030C896 /* MovieCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D430C24E3F87B0030C896 /* MovieCollection.swift */; };
 		995D430F24E3F8970030C896 /* DetailMovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D430E24E3F8970030C896 /* DetailMovieCell.swift */; };
 		995D431124E3F8A50030C896 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995D431024E3F8A50030C896 /* BannerCell.swift */; };
@@ -83,6 +84,8 @@
 		76D96B7E084331A4725EF306 /* Pods_HomeMovieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeMovieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77720911794F603BD965EDBB /* Pods-HomeMovieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeMovieUITests.debug.xcconfig"; path = "Target Support Files/Pods-HomeMovieUITests/Pods-HomeMovieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		777C135483BD97ECF237F2E5 /* Pods-HomeMovieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeMovieUITests.release.xcconfig"; path = "Target Support Files/Pods-HomeMovieUITests/Pods-HomeMovieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99165AA824F361DB00446281 /* BannerDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerDetailCell.swift; sourceTree = "<group>"; };
+		99165AAA24F3631100446281 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		99328E0824DD4B4100ED7473 /* HomeMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99328E0B24DD4B4100ED7473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99328E0D24DD4B4100ED7473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +113,6 @@
 		9933274F24E2AD9400A8F315 /* CustomField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
 		9938075624E0F4C1006A1C5A /* CommonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonData.swift; sourceTree = "<group>"; };
 		993D932824E3EE630045E17A /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
-		995D430A24E3F8330030C896 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		995D430C24E3F87B0030C896 /* MovieCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollection.swift; sourceTree = "<group>"; };
 		995D430E24E3F8970030C896 /* DetailMovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieCell.swift; sourceTree = "<group>"; };
 		995D431024E3F8A50030C896 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				99328E6124DD542300ED7473 /* MainController.swift */,
 				995D430C24E3F87B0030C896 /* MovieCollection.swift */,
 				9933274C24E2A24200A8F315 /* LoginController.swift */,
+				995D430C24E3F87B0030C896 /* MovieCollection.swift */,
 				995D430A24E3F8330030C896 /* BannerView.swift */,
 				99D4F34224E554B60076DEEA /* ParentController.swift */,
 			);
@@ -330,6 +333,7 @@
 				4D1C0A3824ED233E00DB8B35 /* Movies */,
 				995D430E24E3F8970030C896 /* DetailMovieCell.swift */,
 				995D431224E3F8B80030C896 /* MovieCell.swift */,
+				99165AA824F361DB00446281 /* BannerDetailCell.swift */,
 				995D431024E3F8A50030C896 /* BannerCell.swift */,
 			);
 			path = Cell;
@@ -589,6 +593,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99165AAB24F3631100446281 /* BannerView.swift in Sources */,
 				4D1C0A3724ED21BF00DB8B35 /* MoviesController.swift in Sources */,
 				9933275024E2AD9400A8F315 /* CustomField.swift in Sources */,
 				995D431124E3F8A50030C896 /* BannerCell.swift in Sources */,
@@ -609,6 +614,7 @@
 				4D51E08624EFC7E700259DCC /* MovieCollectionViewCell.swift in Sources */,
 				9938075724E0F4C1006A1C5A /* CommonData.swift in Sources */,
 				99328E5C24DD4C9E00ED7473 /* ServerKey.swift in Sources */,
+				99165AA924F361DB00446281 /* BannerDetailCell.swift in Sources */,
 				99328E5424DD4C1B00ED7473 /* BaseUrl.swift in Sources */,
 				4D991D3B24F3A58A004CB453 /* CollectionMoviesController.swift in Sources */,
 				99328E0E24DD4B4100ED7473 /* SceneDelegate.swift in Sources */,
@@ -619,7 +625,6 @@
 				4DD4B12324EEA87800ABDA62 /* MainTagMoviesCollection.swift in Sources */,
 				995D431724E3FE1D0030C896 /* Metadata.swift in Sources */,
 				99328E5624DD4C3A00ED7473 /* StoryboardId.swift in Sources */,
-				995D430B24E3F8330030C896 /* BannerView.swift in Sources */,
 				995D431524E3FDF40030C896 /* Movie.swift in Sources */,
 				4D6B66F024EE7585008A4DF6 /* TagMoviesCell.swift in Sources */,
 				9933274D24E2A24200A8F315 /* LoginController.swift in Sources */,
@@ -801,12 +806,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VW62Z54AQH;
 				INFOPLIST_FILE = HomeMovie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example-dang.HomeMovie";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example-brian.HomeMovie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -823,7 +828,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VW62Z54AQH;
 				INFOPLIST_FILE = HomeMovie/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

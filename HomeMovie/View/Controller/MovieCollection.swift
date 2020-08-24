@@ -9,14 +9,14 @@
 import UIKit
 import RealmSwift
 
-class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
+class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var listMovies = List<Movie>()
     
    required init?(coder: NSCoder) {
        super.init(coder: coder)
    }
-   
+
    // MARK - Helper
    func setDelegateDatasource() -> Void {
        self.delegate = self
@@ -33,7 +33,15 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
                if(isSuccess!) {
                    let rsMovie = value as! ResponseMovie
                    self.listMovies =  rsMovie.data!.list as List<Movie>
-                   self.setDelegateDatasource()
+                DispatchQueue.main.async {
+                    // Run on main thread
+                    self.reloadData()
+                    self.performBatchUpdates({ [weak self] in
+                        let visibleItems = self!.indexPathsForVisibleItems
+                        self!.reloadItems(at: visibleItems)
+                    }, completion: { (_) in
+                    })
+                }
                }
            })
    }
@@ -49,9 +57,10 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
        detailCell.data = movie
        return detailCell
    }
+
    
    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-       return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
+    return CGSize(width: Size.kWidthPosterCell, height: Size.kHeightPosterCell)
        
    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

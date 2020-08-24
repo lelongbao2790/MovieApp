@@ -97,10 +97,13 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
 extension MoviesController:TagMoviesCellProtocol{
     func moviePage(_ data: String) {
         print(index)
-        let vc = (storyboard?.instantiateViewController(identifier: StoryboardId.MovieViewControllerId) as? MovieViewController)!
+        guard let movieController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoryboardId.MovieViewControllerId) as? MovieViewController
+        else {
+            return
+        }
        
-        vc.Title = data
-        self.navigationController?.pushViewController(vc, animated: true)
+        movieController.Title = data
+        self.navigationController?.pushViewController(movieController, animated: true)
     }
 }
 

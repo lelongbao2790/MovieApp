@@ -61,7 +61,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     func changeToRootView() -> Void {
-        StoryboardId.keyWindows!.rootViewController = self.initController(id: StoryboardId.ParentControllerId);
+        self.resetRoot(id: StoryboardId.ParentControllerId)
     }
     
     //--------------------
@@ -75,7 +75,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
                 Loading.dismissLoading()
                 if(isSuccess!) {
-                    StoryboardId.keyWindows!.rootViewController = self.initController(id: StoryboardId.ParentControllerId)
+                     self.resetRoot(id: StoryboardId.ParentControllerId)
                 } else {
                     // Show message login fail
                 }
