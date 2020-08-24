@@ -17,6 +17,7 @@ class MovieCell: UITableViewCell {
     // MARK - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.collectionMovie.frame = self.contentView.bounds
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

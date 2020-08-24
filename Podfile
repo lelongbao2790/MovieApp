@@ -10,6 +10,7 @@ target 'HomeMovie' do
     pod 'AlamofireObjectMapper', :git => 'https://github.com/RomanPodymov/AlamofireObjectMapper.git', :branch => 'xcode-10-2-fix'
     pod 'JGProgressHUD'
     pod 'RealmSwift'
+    pod 'SDWebImage'
 
   target 'HomeMovieTests' do
     inherit! :search_paths

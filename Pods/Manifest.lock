@@ -10,12 +10,16 @@ PODS:
   - Realm/Headers (5.3.3)
   - RealmSwift (5.3.3):
     - Realm (= 5.3.3)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (from `https://github.com/RomanPodymov/AlamofireObjectMapper.git`, branch `xcode-10-2-fix`)
   - JGProgressHUD
   - RealmSwift
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -24,6 +28,7 @@ SPEC REPOS:
     - ObjectMapper
     - Realm
     - RealmSwift
+    - SDWebImage
 
 EXTERNAL SOURCES:
   AlamofireObjectMapper:
@@ -42,7 +47,8 @@ SPEC CHECKSUMS:
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
 
-PODFILE CHECKSUM: 4b932b481723d3182ed0e03240ceed117f5fb667
+PODFILE CHECKSUM: de2eda3b1ff4e5c391b8f1826fce17f1538b1752
 
 COCOAPODS: 1.9.3

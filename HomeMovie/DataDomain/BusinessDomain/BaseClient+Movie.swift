@@ -80,17 +80,12 @@ extension BaseClient {
                     .responseObject { (response: DataResponse<ResponseMovie>) in
                     switch response.result {
                     case let .success(data):
-                        DispatchQueue.main.async {
-                            // Run on main thread
-                            completion(true, nil, data);
-                        }
+                        completion(true, nil, data);
                         break
 
                     case let .failure(error):
-                        DispatchQueue.main.async {
-                            // Run on main thread
-                            completion(false, error as NSError?, nil);
-                        }
+                        completion(false, error as NSError?, nil);
+                        
                         break
                     }
             }

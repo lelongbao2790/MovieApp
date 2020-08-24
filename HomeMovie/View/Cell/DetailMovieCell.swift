@@ -17,9 +17,12 @@ class DetailMovieCell: UICollectionViewCell {
             guard let data = data else { return }
             
             if(data.poster.count > 0){
-                let url = URL.init(string: "\(API.kPosterUrl + data.poster)")! as URL
-                DataManager.shared.downloadImageUrl(imageView: self.imgPoster, from: url)
+               // let url = URL.init(string: "\(API.kPosterUrl + data.poster)")! as URL
+               // DataManager.shared.downloadImageUrl(imageView: self.imgPoster, from: url)
                 //self.imgPoster.downloaded(from: url)
+                
+                self.imgPoster.sd_setImage(with: URL(string: "\(API.kPosterUrl + data.poster)")!, placeholderImage: UIImage(named: "no_image_poster"))
+                
                 lbName.text = String(format: " \(data.movieName)")
             }
         }
