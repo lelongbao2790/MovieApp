@@ -10,14 +10,13 @@ import UIKit
 import RealmSwift
 
 class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    //MARK: -Declear
     var typeMovie: TypeMovies!
-   let cellSpacingHeight: CGFloat = 10
+    let cellSpacingHeight: CGFloat = 10
+    @IBOutlet var tbvTagMovies: UITableView!
+    var typeFilm = ""
     
-    //var dataList = List<Movie>()
-    let dataList:[String] = TitleMenu.FeaturesTitleMenu
-    
-   @IBOutlet var tbvTagMovies: UITableView!
-   
+    //MARK: -Properties
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -30,9 +29,11 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let typeFilmIndex: Int = self.tabBarController!.selectedIndex
               if typeFilmIndex == StoryboardId.FeatureMoviesId {
                   typeMovie = TypeMovies.Feature
+                typeFilm = "feature"
               }
               else if typeFilmIndex == StoryboardId.TelevisionId {
                   typeMovie = TypeMovies.Television
+                typeFilm = "television"
               }
     }
     
@@ -42,9 +43,7 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
        // These tasks can also be done in IB if you prefer.
        tbvTagMovies.delegate = self
        tbvTagMovies.dataSource = self
-    
-  
-    
+
    }
    
    // MARK: - Table View delegate methods
@@ -79,9 +78,18 @@ class MoviesController: UIViewController, UITableViewDelegate, UITableViewDataSo
        cell.layer.cornerRadius = 8
        cell.textLabel?.textColor = .lightGray
        cell.clipsToBounds = true
-       cell.loadInformation(
-       category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
-       tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row])
+    
+    if typeFilm == "feature" {
+        cell.loadInformation(
+        category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+        genre: String(format:"\(Genre.Feature.rawValue)"),
+        tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row])
+    }else{
+        cell.loadInformation(
+        category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+        genre: String(format:"\(Genre.Television.rawValue)"),
+        tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row])
+    }
        cell.delegate = self
        cell.indexPath = indexPath
        return cell

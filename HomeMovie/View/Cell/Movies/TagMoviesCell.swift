@@ -33,11 +33,11 @@ class TagMoviesCell: UITableViewCell{
     }
     
     // MARK: - Helper
-    func loadInformation(category: String, tag: String) -> Void {
+    func loadInformation(category: String,genre: String, tag: String) -> Void {
         DispatchQueue.main.async(execute: {
             self.lbTag.text = category
             self.collectionMovie.setDelegateDatasource()
-            self.collectionMovie.loadMovies(tagMovie: tag)
+            self.collectionMovie.loadMovies(genreMovie: genre, tagMovie: tag)
             
         })
     }
