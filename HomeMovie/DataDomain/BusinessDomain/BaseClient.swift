@@ -26,6 +26,7 @@ class BaseClient: NSObject {
         case listMovie(genre: String, tag: String, page: String, token: String)
         case detailInformation(movieId: String, token: String)
         case playMovie(movieId: String, token: String, ep: String)
+        case searchMovie(keyword: String, token: String)
 
         static let baseHTTPS = API.kBaseUrlSSL
         static let baseHTTP = API.kBaseUrl
@@ -37,6 +38,7 @@ class BaseClient: NSObject {
             case .listMovie: return .get
             case .detailInformation: return .get
             case .playMovie: return .get
+            case .searchMovie: return .get
             }
             
         }
@@ -55,7 +57,9 @@ class BaseClient: NSObject {
                 
             case .playMovie(let movieId, let token, let ep):
                 return String(format: API.kPlayUrl, movieId, token, ep)
-            
+                
+            case .searchMovie(let keyword, _):
+                return String(format: API.kSearchUrl, keyword)
             }
         
         }
@@ -89,7 +93,12 @@ class BaseClient: NSObject {
                 case .detailInformation(movieId: _, token: let accessToken):
                     urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
                     return urlHttpRequest
+                    
+                case .searchMovie( keyword: _, token: let accessToken):
+                    urlHttpRequest.setValue("\(accessToken)", forHTTPHeaderField: Header.AccessTokenKey)
+                    return urlHttpRequest
                 }
+                
         }
     }
 }

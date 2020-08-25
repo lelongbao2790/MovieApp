@@ -30,6 +30,9 @@ struct StoryboardId {
     //static let MovieInTagCellId = "MovieInTagCell"
     // DETAIL MOVIE
     static let DetailMovieControllerId = "DetailMovieController"
+    // SEARCH
+    static let SearchControllerId = "SearchController"
+    static let SearchMovieCellId = "SearchMovieCell"
     
     static let keyWindows =
     UIApplication.shared.connectedScenes

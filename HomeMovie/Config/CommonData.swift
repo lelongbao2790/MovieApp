@@ -171,6 +171,14 @@ enum TypeFilm {
             return "Phim Truyền Hình"
         }
     }
+    var genre: Int {
+        switch self {
+        case .Feature:
+            return Genre.Feature.rawValue
+        case .Television:
+            return Genre.Television.rawValue
+        }
+    }
 }
 
 struct Tag {

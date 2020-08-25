@@ -42,12 +42,12 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
         return movieCell
     }
     
-    // TEST
-//    func getDetailMovie(movieId: String) {
-//        BaseClient.shared.detailMovie(movieId: movieId, completion: {
+//    // TEST
+//    func searchMovieByKeyword(keyword: String) {
+//        BaseClient.shared.searchMovieByKeyword(keyword: keyword, page: "1", limit: "5", completion: {
 //            (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
 //            if(isSuccess!) {
-//                let resDetailMovie = value as! ResponseDetailMovie
+//                let resDetailMovie = value as! ResponseSearchMovie
 //                var a = 0
 //                a = 9
 //            }

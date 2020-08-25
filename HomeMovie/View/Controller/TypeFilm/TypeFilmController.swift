@@ -21,7 +21,7 @@ class TypeFilmController: UIViewController, UITableViewDataSource, UITableViewDe
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        var typeFilmIndex: Int = self.tabBarController?.selectedIndex as! Int
+        let typeFilmIndex: Int = self.tabBarController?.selectedIndex ?? StoryboardId.FeatureFilmTabBarIndex
         if typeFilmIndex == StoryboardId.FeatureFilmTabBarIndex {
             typeFilm = TypeFilm.Feature
         }
@@ -53,7 +53,7 @@ class TypeFilmController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBAction func gotoTagController(_ sender: UIButton) {
         let controller: TagController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.TagControllerId) as! TagController
         controller.tagKey = sender.currentTitle
-        controller.genre = Genre.Feature.rawValue
+        controller.genre = typeFilm.genre
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
