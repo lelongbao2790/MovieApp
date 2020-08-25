@@ -8,14 +8,18 @@
 
 import UIKit
 
-class ParentController: UITabBarController {
+class ParentController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       // changeSelectedColor()
     }
-    
+//
+//    func changeSelectedColor() {
+//        let numberOfItems = CGFloat(tabBar.items!.count)
+//        let tabBarItemSize = CGSize(width: tabBar.frame.width / numberOfItems, height: tabBar.frame.height )
+//        tabBar.selectionIndicatorImage = UIImage.imageWithColor(UIColor.orange.withAlphaComponent(1), size: tabBarItemSize).resizableImage(withCapInsets: UIEdgeInsets.zero)
+//    }
 
     /*
     // MARK: - Navigation
@@ -28,3 +32,16 @@ class ParentController: UITabBarController {
     */
 
 }
+//
+//extension UIImage {
+//    class func imageWithColor(_ color: UIColor, size: CGSize) -> UIImage {
+//        let rect: CGRect = CGRect(origin: CGPoint(x: 0,y :0), size: CGSize(width: size.width, height: size.height))
+//        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+//        color.setFill()
+//        UIRectFill(rect)
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        UIGraphicsEndImageContext()
+//        return image
+//    }
+//
+//}
