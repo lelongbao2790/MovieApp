@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TagMoviesCellProtocol : AnyObject {
-    func moviePage(_ data: String, genre: String)
+    func moviePage(_ data: String)
 }
 
 class TagMoviesCell: UITableViewCell{
@@ -45,7 +45,7 @@ class TagMoviesCell: UITableViewCell{
     //MARK: -Action
     @IBAction func showAllMovies(_ sender: Any) {
         let titleLabel = lbTag.text!
-        delegate?.moviePage(titleLabel,genre: genreMovie)
+        delegate?.moviePage(titleLabel)
         
     }
    

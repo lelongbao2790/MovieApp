@@ -85,7 +85,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryboardId.MovieCollectionViewCellId, for: indexPath) as! MovieCollectionViewCell
                 cell.lbName.text = tagMovie
                 cell.data = listMovies[indexPath.item]
-            print("list movie \(listMovies[indexPath.item].movieName)")
+           // print("list movie \(listMovies[indexPath.item].movieName)")
             if(indexPath.row == listMovies.count-1){
                 //
                 loadMovies(tagMovie: tagMovie!, pageNumber: (listMovies.count/10) + 1)
@@ -94,8 +94,20 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
            }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            print("you tap \(indexPath)")
-
+        print("list movie \(listMovies[indexPath.item].movieName)")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryboardId.MovieCollectionViewCellId, for: indexPath) as! MovieCollectionViewCell
+        
+        let controller: DetailMovieController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+       
+        
+        let cellCollectionView = listMovies[indexPath.item]
+        controller.data = cellCollectionView
+        
+        cell.data = listMovies[indexPath.item]
+        controller.postMovie = cell.imgPoster.image
+        
+        print(cell.imgPoster.image as Any)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
 
