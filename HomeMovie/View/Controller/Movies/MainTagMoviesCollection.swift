@@ -26,41 +26,18 @@ class MainTagMoviesCollection: UICollectionView,UICollectionViewDelegate,UIColle
         self.reloadData()
     }
 
-    func loadMovies(tagMovie: String) {
-        
-        let genre:TypeMovies = .Feature
-        switch genre {
-              case .Feature:
-                   BaseClient.shared.listMovieByGenre(
-                             genre: String(format:"\(Genre.Feature.rawValue)"),
-                             tag: tagMovie,
-                             page:  String(format:"\(CommonData.kDefaultNumber)"),
-                             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                                 if(isSuccess!) {
-                                     let rsMovie = value as! ResponseMovie
-                                     self.listMovies =  rsMovie.data!.list as List<Movie>
-                                     self.setDelegateDatasource()
-                                 }
-                             })
-              case .Television:
-              
-                BaseClient.shared.listMovieByGenre(
-                           genre: String(format:"\(Genre.Television.rawValue)"),
-                           tag: tagMovie,
-                           page:  String(format:"\(CommonData.kDefaultNumber)"),
-                           completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
-                               if(isSuccess!) {
-                                   let rsMovie = value as! ResponseMovie
-                                   self.listMovies =  rsMovie.data!.list as List<Movie>
-                                   self.setDelegateDatasource()
-                               }
-                           })
-                
-              default:
-                  break
-              }
-        
-       
+    func loadMovies(genreMovie:String, tagMovie: String) {
+           BaseClient.shared.listMovieByGenre(
+             genre: genreMovie,//String(format:"\(Genre.Feature.rawValue)"),
+             tag: tagMovie,
+             page:  String(format:"\(CommonData.kDefaultNumber)"),
+             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
+                 if(isSuccess!) {
+                     let rsMovie = value as! ResponseMovie
+                     self.listMovies =  rsMovie.data!.list as List<Movie>
+                     self.setDelegateDatasource()
+                 }
+             })
     }
     //MARK: -Delegate and Datasource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

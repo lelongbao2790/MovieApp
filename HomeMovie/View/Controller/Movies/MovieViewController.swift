@@ -19,6 +19,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         didSet {
             print(self.Title!)
             self.tagMovie = Tag.Features[Title!]
+         
         }
     }
    
@@ -42,7 +43,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     private func loadMovies(tagMovie: String,pageNumber: Int) {
       
             BaseClient.shared.listMovieByGenre(
-                genre: String(format:"\(String(describing: genre))"),
+                genre: String(format:"\(self.genre!)"),
                 tag: tagMovie,
                 page:  String(format:"\(pageNumber)"),
                 completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
@@ -80,18 +81,11 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             return listMovies.count
            }
 
-//            func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//            if indexPath.row + 1 >= listMovies.count {
-//                currentPage += 1
-//                loadMovies(tagMovie: tagMovie,pageNumber: currentPage)
-//                }
-//            }
-   
            func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryboardId.MovieCollectionViewCellId, for: indexPath) as! MovieCollectionViewCell
                 cell.lbName.text = tagMovie
                 cell.data = listMovies[indexPath.item]
-            print("list movie \(listMovies[indexPath.item].movieName)")
+           // print("list movie \(listMovies[indexPath.item].movieName)")
             if(indexPath.row == listMovies.count-1){
                 //
                 loadMovies(tagMovie: tagMovie!, pageNumber: (listMovies.count/10) + 1)
@@ -100,13 +94,22 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
            }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            print("you tap \(indexPath)")
-//        let vc = (storyboard?.instantiateViewController(identifier: StoryboardId.DetailMovieControllerId) as? DetailMovieController)!
-//              
-//               //vc.Title = data
-//               self.navigationController?.pushViewController(vc, animated: true)
-        }
+        print("list movie \(listMovies[indexPath.item].movieName)")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryboardId.MovieCollectionViewCellId, for: indexPath) as! MovieCollectionViewCell
+        
+        let controller: DetailMovieController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+       
+        
+        let cellCollectionView = listMovies[indexPath.item]
+        controller.data = cellCollectionView
+        
+        cell.data = listMovies[indexPath.item]
+        controller.postMovie = cell.imgPoster.image
+        
+        print(cell.imgPoster.image as Any)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
+}
 
 
 

@@ -706,10 +706,10 @@
             </objects>
             <point key="canvasLocation" x="2906.4000000000001" y="101.97044334975369"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Movie Controller-->
         <scene sceneID="aAH-Y9-oP0">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="CQI-if-7kC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailMovieController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CQI-if-7kC" customClass="DetailMovieController" customModule="HomeMovie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="enQ-O3-se9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -717,16 +717,45 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="UmC-du-JcX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cQE-eS-2E2">
+                                <rect key="frame" x="110" y="44" width="155" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1Ai-bY-8xL"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PET-v6-3o3">
+                                <rect key="frame" x="16" y="252" width="343" height="41"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="MqF-0l-szu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="UmC-du-JcX" firstAttribute="leading" secondItem="YbO-24-hyu" secondAttribute="leading" id="1qZ-2o-kqY"/>
                             <constraint firstItem="UmC-du-JcX" firstAttribute="trailing" secondItem="YbO-24-hyu" secondAttribute="trailing" id="33m-z2-r1B"/>
                             <constraint firstItem="UmC-du-JcX" firstAttribute="top" secondItem="enQ-O3-se9" secondAttribute="top" id="5ZU-Ik-NpT"/>
+                            <constraint firstItem="cQE-eS-2E2" firstAttribute="leading" secondItem="YbO-24-hyu" secondAttribute="leading" constant="110" id="5jT-e5-nl9"/>
+                            <constraint firstItem="PET-v6-3o3" firstAttribute="leading" secondItem="YbO-24-hyu" secondAttribute="leading" constant="16" id="9WZ-s7-lvx"/>
+                            <constraint firstItem="PET-v6-3o3" firstAttribute="centerX" secondItem="cQE-eS-2E2" secondAttribute="centerX" id="DCt-Sa-W4f"/>
+                            <constraint firstItem="YbO-24-hyu" firstAttribute="bottom" secondItem="PET-v6-3o3" secondAttribute="bottom" constant="485" id="PLB-0C-45U"/>
                             <constraint firstAttribute="bottom" secondItem="UmC-du-JcX" secondAttribute="bottom" id="UnE-84-aRK"/>
+                            <constraint firstItem="cQE-eS-2E2" firstAttribute="top" secondItem="YbO-24-hyu" secondAttribute="top" id="X2J-dt-apO"/>
+                            <constraint firstItem="PET-v6-3o3" firstAttribute="top" secondItem="cQE-eS-2E2" secondAttribute="bottom" constant="8" id="X4o-wB-siZ"/>
+                            <constraint firstItem="PET-v6-3o3" firstAttribute="top" secondItem="cQE-eS-2E2" secondAttribute="bottom" constant="8" id="kew-4k-5TC"/>
+                            <constraint firstItem="YbO-24-hyu" firstAttribute="trailing" secondItem="cQE-eS-2E2" secondAttribute="trailing" constant="110" id="msd-Zj-MG2"/>
+                            <constraint firstItem="cQE-eS-2E2" firstAttribute="top" secondItem="YbO-24-hyu" secondAttribute="top" id="nZX-Na-iUq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YbO-24-hyu"/>
                     </view>
+                    <connections>
+                        <outlet property="imgPosterMovie" destination="cQE-eS-2E2" id="eg6-lx-cak"/>
+                        <outlet property="lbMovieName" destination="PET-v6-3o3" id="s55-OP-YX4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eYC-jR-iAN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

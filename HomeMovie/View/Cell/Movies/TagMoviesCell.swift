@@ -16,7 +16,7 @@ class TagMoviesCell: UITableViewCell{
    @IBOutlet weak var lbTag:UILabel!
     @IBOutlet weak var collectionMovie: MainTagMoviesCollection!
     @IBOutlet weak var btnMore: UIButton!
-    let TagMovie: String = ""
+    let genreMovie: String = ""
 
     var indexPath: IndexPath!
     weak var delegate:TagMoviesCellProtocol?
@@ -33,11 +33,11 @@ class TagMoviesCell: UITableViewCell{
     }
     
     // MARK: - Helper
-    func loadInformation(category: String, tag: String) -> Void {
+    func loadInformation(category: String,genre: String, tag: String) -> Void {
         DispatchQueue.main.async(execute: {
             self.lbTag.text = category
             self.collectionMovie.setDelegateDatasource()
-            self.collectionMovie.loadMovies(tagMovie: tag)
+            self.collectionMovie.loadMovies(genreMovie: genre, tagMovie: tag)
             
         })
     }
