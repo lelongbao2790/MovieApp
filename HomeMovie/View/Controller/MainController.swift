@@ -18,6 +18,15 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
     
     @IBOutlet weak var tbvCategory: UITableView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setNavigationBarLogo(title: "Trang chủ", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
+    }
+    
     // MARK - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)

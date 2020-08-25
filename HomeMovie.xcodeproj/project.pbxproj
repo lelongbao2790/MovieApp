@@ -10,6 +10,7 @@
 		6333D5B5A271D8F6EF0096CC /* Pods_HomeMovieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B13B5502955B012951ED12 /* Pods_HomeMovieUITests.framework */; };
 		8194D242DF59934D68F4C9A0 /* Pods_HomeMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEBEE6D03970B11D04D5755 /* Pods_HomeMovie.framework */; };
 		99165AA924F361DB00446281 /* BannerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99165AA824F361DB00446281 /* BannerDetailCell.swift */; };
+		99165AB024F51D4D00446281 /* CommonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99165AAF24F51D4D00446281 /* CommonExtension.swift */; };
 		99328E0C24DD4B4100ED7473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99328E0B24DD4B4100ED7473 /* AppDelegate.swift */; };
 		99328E0E24DD4B4100ED7473 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99328E0D24DD4B4100ED7473 /* SceneDelegate.swift */; };
 		99328E1324DD4B4100ED7473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99328E1124DD4B4100ED7473 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		77720911794F603BD965EDBB /* Pods-HomeMovieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeMovieUITests.debug.xcconfig"; path = "Target Support Files/Pods-HomeMovieUITests/Pods-HomeMovieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		777C135483BD97ECF237F2E5 /* Pods-HomeMovieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeMovieUITests.release.xcconfig"; path = "Target Support Files/Pods-HomeMovieUITests/Pods-HomeMovieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		99165AA824F361DB00446281 /* BannerDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerDetailCell.swift; sourceTree = "<group>"; };
+		99165AAF24F51D4D00446281 /* CommonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonExtension.swift; sourceTree = "<group>"; };
 		99328E0824DD4B4100ED7473 /* HomeMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99328E0B24DD4B4100ED7473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99328E0D24DD4B4100ED7473 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				99328E5B24DD4C9E00ED7473 /* ServerKey.swift */,
 				9938075624E0F4C1006A1C5A /* CommonData.swift */,
 				99DDCCF424EA7FE700541713 /* ListTransform.swift */,
+				99165AAF24F51D4D00446281 /* CommonExtension.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				99328E5024DD4C0500ED7473 /* CommonString.swift in Sources */,
 				99328E5E24DD513500ED7473 /* BaseClient.swift in Sources */,
 				99D4F34324E554B70076DEEA /* ParentController.swift in Sources */,
+				99165AB024F51D4D00446281 /* CommonExtension.swift in Sources */,
 				99328E6224DD542300ED7473 /* MainController.swift in Sources */,
 				993D932924E3EE630045E17A /* Loading.swift in Sources */,
 				99328E0C24DD4B4100ED7473 /* AppDelegate.swift in Sources */,
