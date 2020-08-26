@@ -25,7 +25,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         Loading.showLoading(message: Message.LoadingMessage, view: self.view)
         DispatchQueue.global(qos: .background).async {
             // Check token key
-            let token = DataManager.shared.GetValue(key: Header.AccessTokenKey)
+           let token = DataManager.shared.GetValue(key: Header.AccessTokenKey)
             if(!token.isEmpty) {
                 BaseClient.shared.accessToken = token
                 DispatchQueue.main.async() { [weak self] in

@@ -36,7 +36,7 @@ class BannerDetailCell: UITableViewCell {
     
     func loadBannerMovies(controller: MainController) {
         BaseClient.shared.listMovieByGenre(
-            genre: String(format:"\(Genre.Television.rawValue)"),
+            genre: String(format:"\(Genre.Hot.rawValue)"),
             tag: CommonData.kDefaultBannerTag,
             page:  String(format:"\(CommonData.kDefaultNumber + 1)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in

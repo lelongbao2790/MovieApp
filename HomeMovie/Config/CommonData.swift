@@ -158,3 +158,9 @@ enum Genre : Int {
     case Feature = 1
     case Television = 2
 }
+
+enum TypeMovie {
+    case Hot
+    case Feature
+    case Television
+}

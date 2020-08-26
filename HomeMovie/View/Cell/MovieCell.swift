@@ -38,6 +38,7 @@ class MovieCell: UITableViewCell {
     
     // MARK - Helper
     func loadInformation(category: String,
+                         genre : String,
                          tag: String, row: Int,
                          dataSourceDelegate: UICollectionViewDataSource & UICollectionViewDelegate,
                          controller: MainController ) -> Void {
@@ -46,12 +47,12 @@ class MovieCell: UITableViewCell {
         self.collectionMovie.dataSource = dataSourceDelegate
         self.collectionMovie.tag = row
         self.collectionMovie.reloadData()
-        self.loadMovies(tagMovie: tag, controller: controller)
+        self.loadMovies(genreMovie: genre, tagMovie: tag, controller: controller)
     }
     
-    func loadMovies(tagMovie: String, controller: MainController) {
+    func loadMovies(genreMovie: String, tagMovie: String, controller: MainController) {
         BaseClient.shared.listMovieByGenre(
-            genre: String(format:"\(Genre.Feature.rawValue)"),
+            genre: genreMovie, //String(format:"\(Genre.Feature.rawValue)"),
             tag: tagMovie,
             page:  String(format:"\(CommonData.kDefaultNumber)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in
@@ -68,7 +69,7 @@ class MovieCell: UITableViewCell {
             })
     }
 
-    // MARK - Action
-    @IBAction func showAll(_ sender: Any) {
-    }
+//    // MARK - Action
+//    @IBAction func showAll(_ sender: Any) {
+//    }
 }

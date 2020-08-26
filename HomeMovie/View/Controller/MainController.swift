@@ -15,23 +15,53 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
     var storedOffsets = [Int: CGFloat]()
     var listBannerMovies = List<Movie>()
     var listMovies = List<Movie>()
+    var typeFilm = ""
+    var typeMovie: TypeMovie!
     
     @IBOutlet weak var tbvCategory: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setNavigationBarLogo(title: "Trang chủ", controlEvents: .touchUpInside,
-        ForAction:{() -> Void in
-            // Search action
-            print("Search")
-        })
-    }
+
     
     // MARK - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         tbvCategory.allowsSelection = false
+        
+       let typeFilmIndex: Int = self.tabBarController!.selectedIndex
+        if typeFilmIndex == StoryboardId.HotMovieId {
+            typeMovie = TypeMovie.Hot
+          typeFilm = "hot"
+        }
+        else if typeFilmIndex == StoryboardId.FeatureMovieId {
+            typeMovie = TypeMovie.Feature
+          typeFilm = "feature"
+        }
+        else if typeFilmIndex == StoryboardId.TelevisionMovieId{
+            typeMovie = TypeMovie.Television
+           typeFilm = "television"
+        }
+       
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if(typeFilm == "hot"){
+        self.setNavigationBarLogo(title: "Trang chủ", controlEvents: .touchUpInside,
+        ForAction:{() -> Void in
+            // Search action
+            print("Search")
+        })
+        }
+        if(typeFilm == "feature"){
+        self.setNavigationBarLogo(title: "Phim lẻ", controlEvents: .touchUpInside,
+           ForAction:{() -> Void in
+               // Search action
+               print("Search")
+           })
+        }
+    }
+    
+
     
     // MARK - UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,12 +89,34 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
             
         } else {
             guard let movieCell = cell as? MovieCell else { return }
-            movieCell.loadInformation(
+            if (typeFilm == "hot") {
+                movieCell.loadInformation(
                 category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+                genre: String(format:"\(Genre.Hot.rawValue)"),
                 tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row],
                 row: indexPath.row,
                 dataSourceDelegate: self,
                 controller: self)
+            }
+            if(typeFilm == "feature"){
+                movieCell.loadInformation(
+               category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+               genre: String(format:"\(Genre.Feature.rawValue)"),
+               tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row],
+               row: indexPath.row,
+               dataSourceDelegate: self,
+               controller: self)
+            }
+            if(typeFilm == "television"){
+                movieCell.loadInformation(
+                category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+                genre: String(format:"\(Genre.Television.rawValue)"),
+                tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row],
+                row: indexPath.row,
+                dataSourceDelegate: self,
+                controller: self)
+            }
+            
             movieCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
         }
     }
