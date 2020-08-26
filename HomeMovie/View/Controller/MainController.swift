@@ -45,20 +45,14 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if(typeFilm == "hot"){
+
+  
         self.setNavigationBarLogo(title: "Trang chủ", controlEvents: .touchUpInside,
-        ForAction:{() -> Void in
-            // Search action
-            print("Search")
-        })
-        }
-        if(typeFilm == "feature"){
-        self.setNavigationBarLogo(title: "Phim lẻ", controlEvents: .touchUpInside,
            ForAction:{() -> Void in
                // Search action
                print("Search")
            })
-        }
+
     }
     
 
