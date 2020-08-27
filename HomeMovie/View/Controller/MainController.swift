@@ -27,6 +27,12 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
         tbvCategory.allowsSelection = false
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.bannerView.navigationOfController = self.navigationController!
+        self.bannerView.storyboardOfController = self.storyboard!
+    }
+    
     // MARK - UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TitleMenu.FeaturesTitleMenu.count
@@ -35,6 +41,8 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movieCell: MovieCell = self.tbvCategory.dequeueReusableCell(withIdentifier: StoryboardId.MovieCellId, for: indexPath) as! MovieCell
         
+        movieCell.navigationOfController = self.navigationController!
+        movieCell.storyboardOfController = self.storyboard!
         movieCell.loadInformation(
             category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
             tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row])

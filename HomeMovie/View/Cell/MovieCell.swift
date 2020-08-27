@@ -13,6 +13,8 @@ class MovieCell: UITableViewCell {
     // MARK - Properties
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var collectionMovie: MovieCollection!
+    var storyboardOfController = UIStoryboard()
+    var navigationOfController = UINavigationController()
     
     // MARK - Life Cycle
     override func awakeFromNib() {
@@ -30,6 +32,8 @@ class MovieCell: UITableViewCell {
             self.lbTitle.text = category
             self.collectionMovie.setDelegateDatasource()
             self.collectionMovie.loadMovies(tagMovie: tag)
+            self.collectionMovie.navigationOfController = self.navigationOfController
+            self.collectionMovie.storyboardOfController = self.storyboardOfController
         })
         
     }

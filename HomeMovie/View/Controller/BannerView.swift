@@ -12,6 +12,8 @@ import RealmSwift
 class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var listMovies = List<Movie>()
+    var storyboardOfController = UIStoryboard()
+    var navigationOfController = UINavigationController()
     
     // MARK - Helper
     func setDelegateDatasource() -> Void {
@@ -49,6 +51,16 @@ class BannerView: UICollectionView, UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: BannerCell = self.cellForItem(at: indexPath) as! BannerCell
+        let controller: DetailMovieController = self.storyboardOfController.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+        controller.data = cell.data!
+        if let image = cell.imgBanner.image {
+            controller.posterData = image
+            self.navigationOfController.pushViewController(controller, animated: true)
+        }
     }
 }
 

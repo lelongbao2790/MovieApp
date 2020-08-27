@@ -11,6 +11,7 @@ import UIKit
 class DetailMovieCell: UICollectionViewCell {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var imgPoster: UIImageView!
+
     
     var data: Movie? {
         didSet {

@@ -12,6 +12,8 @@ import RealmSwift
 class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var listMovies = List<Movie>()
+    var storyboardOfController = UIStoryboard()
+    var navigationOfController = UINavigationController()
     
    required init?(coder: NSCoder) {
        super.init(coder: coder)
@@ -53,6 +55,16 @@ class MovieCollection: UICollectionView, UICollectionViewDelegate, UICollectionV
    
    func collectionView(_ collectionView: UICollectionView,layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
        return CGSize(width: Size.kWidthBannerCell, height: Size.kHeightBannerCell)
-       
    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell: DetailMovieCell = self.cellForItem(at: indexPath) as! DetailMovieCell
+        let controller: DetailMovieController = self.storyboardOfController.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+        controller.data = cell.data!
+        if let image = cell.imgPoster.image {
+            controller.posterData = image
+            self.navigationOfController.pushViewController(controller, animated: true)
+        }
+    }
+    
 }
