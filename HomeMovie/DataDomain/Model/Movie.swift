@@ -41,4 +41,11 @@ class Movie: Object, Mappable {
         episode             <- map["Episode"]
         sequence            <- map["Sequence"]
     }
+    
+    func copyFromSearchMovie(searchMovie: SearchMovie) {
+        movieName = searchMovie.movieName
+        knownAs = searchMovie.knownAs
+        rating = searchMovie.rating
+        plotVi = searchMovie.plotVi
+    }
 }

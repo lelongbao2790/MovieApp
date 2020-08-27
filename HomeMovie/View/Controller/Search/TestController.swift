@@ -44,6 +44,18 @@ class TestController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: SearchMovieCell = self.tbvMovie.cellForRow(at: indexPath) as! SearchMovieCell
+        let controller: DetailMovieController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+        var movie = Movie()
+        movie.copyFromSearchMovie(searchMovie: cell.data!)
+        controller.data = movie
+        if let image = cell.posterImage.image {
+            controller.posterData = image
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+    
     
     //
     // MARK: UISearchBarDelegate
