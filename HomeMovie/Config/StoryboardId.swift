@@ -25,6 +25,16 @@ struct StoryboardId {
     static let FeatureMovieId = 1
     static let TelevisionMovieId = 2
     
+    //Search id
+    static let SearchControllerId = "SearchController"
+    static let SearchCellId = "SearchCell"
+    
+    //Type film id
+    static let TypeMovieCellId = "TypeMovieCell"
+    
+    //Movies page play
+    static let MoviesControllerId = "MoviesController"
+    
 }
 
 

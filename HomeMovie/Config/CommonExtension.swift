@@ -57,6 +57,20 @@ extension UIViewController {
         navigationItem.rightBarButtonItem = barButton
         
     }
+    
+    func navigationTitle(title: String) -> Void {
+        self.navigationItem.title = title
+          let navBar = self.navigationController?.navigationBar
+
+            // change the bar tint color to change what the color of the bar itself looks like
+            navBar?.barTintColor = UIColor.black
+
+            // tint color changes the color of the nav item colors eg. the back button
+            navBar?.tintColor = UIColor.white
+            
+            // the following attribute changes the title color
+            navBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
 }
 
 extension UIButton {

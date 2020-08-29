@@ -34,9 +34,9 @@ class BannerDetailCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func loadBannerMovies(controller: MainController) {
+    func loadBannerMovies(genreMovie: String, controller: MainController) {
         BaseClient.shared.listMovieByGenre(
-            genre: String(format:"\(Genre.Hot.rawValue)"),
+            genre: genreMovie, //String(format:"\(Genre.Hot.rawValue)"),
             tag: CommonData.kDefaultBannerTag,
             page:  String(format:"\(CommonData.kDefaultNumber + 1)"),
             completion: { (isSuccess:Bool?, error:NSError?, value:AnyObject?) in

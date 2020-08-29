@@ -92,4 +92,30 @@ extension BaseClient {
         }
     }
     
+    /**
+    *search Movie by Keyword
+    *@param: keyword, page, limit
+    *@return  list movie in callback
+    */
+    
+    func searchMovieByKeyword(keyword: String, completion: @escaping ServiceResponse) {
+        DispatchQueue.global(qos: .background).async {
+            //run on background
+            
+            let request = Services.searchMovie(keyword: keyword, token: self.accessToken!) as URLRequestConvertible
+            Alamofire.request(request)
+                    .responseObject { (response: DataResponse<ResponseSearchMovie>) in
+                    switch response.result {
+                    case let .success(data):
+                        completion(true, nil, data);
+                        break
+
+                    case let .failure(error):
+                        completion(false, error as NSError?, nil);
+                        
+                        break
+                    }
+            }        }
+    }
+    
 }

@@ -17,41 +17,46 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
     var listMovies = List<Movie>()
     var typeFilm = ""
     var typeMovie: TypeMovie!
-    
+   
     @IBOutlet weak var tbvCategory: UITableView!
-    
-
     
     // MARK - LifeCycle
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         tbvCategory.allowsSelection = false
-        
-       let typeFilmIndex: Int = self.tabBarController!.selectedIndex
-        if typeFilmIndex == StoryboardId.HotMovieId {
-            typeMovie = TypeMovie.Hot
-          typeFilm = "hot"
-        }
-        else if typeFilmIndex == StoryboardId.FeatureMovieId {
-            typeMovie = TypeMovie.Feature
-          typeFilm = "feature"
-        }
-        else if typeFilmIndex == StoryboardId.TelevisionMovieId{
-            typeMovie = TypeMovie.Television
-           typeFilm = "television"
-        }
-       
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-  
-        self.setNavigationBarLogo(title: "Trang chủ", controlEvents: .touchUpInside,
-           ForAction:{() -> Void in
-               // Search action
-               print("Search")
-           })
+        let typeFilmIndex: Int = self.tabBarController?.selectedIndex ?? StoryboardId.HotMovieId
+             if typeFilmIndex == StoryboardId.HotMovieId {
+                 typeMovie = .Hot
+               typeFilm = "hot"
+                self.setNavigationBarLogo(title: "Trang chủ", controlEvents: .touchUpInside,
+                ForAction:{() -> Void in
+                    // Search action
+                    print("Search")
+                })
+             }
+             else if typeFilmIndex == StoryboardId.FeatureMovieId {
+                 typeMovie = .Feature
+               typeFilm = "feature"
+                self.setNavigationBarLogo(title: "Phim lẻ", controlEvents: .touchUpInside,
+                ForAction:{() -> Void in
+                    // Search action
+                    print("Search")
+                })
+             }
+             else if typeFilmIndex == StoryboardId.TelevisionMovieId{
+                 typeMovie = .Television
+                typeFilm = "television"
+                self.setNavigationBarLogo(title: "Phim bộ", controlEvents: .touchUpInside,
+                ForAction:{() -> Void in
+                    // Search action
+                    print("Search")
+                })
+             }
 
     }
     
@@ -78,40 +83,49 @@ class MainController : UIViewController, UITableViewDelegate, UITableViewDataSou
         if(indexPath.row == 0) {
             guard let bannerDetailCell = cell as? BannerDetailCell else { return }
              bannerDetailCell.loadInformation(row: indexPath.row, dataSourceDelegate: self)
-             bannerDetailCell.loadBannerMovies(controller: self)
+            if(typeMovie == TypeMovie.Hot){
+                bannerDetailCell.loadBannerMovies(genreMovie: String(format:"\(Genre.Hot.rawValue)"), controller: self)
+            }
+            else if(typeMovie == TypeMovie.Feature){
+                bannerDetailCell.loadBannerMovies(genreMovie: String(format:"\(Genre.Feature.rawValue)"), controller: self)
+            }
+            else if(typeMovie == TypeMovie.Television){
+                bannerDetailCell.loadBannerMovies(genreMovie: String(format:"\(Genre.Television.rawValue)"), controller: self)
+            }
              bannerDetailCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
             
         } else {
             guard let movieCell = cell as? MovieCell else { return }
-            if (typeFilm == "hot") {
+            if (typeMovie == TypeMovie.Hot) {
                 movieCell.loadInformation(
-                category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+                category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row - 1],
                 genre: String(format:"\(Genre.Hot.rawValue)"),
-                tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row],
+                tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row - 1],
                 row: indexPath.row,
                 dataSourceDelegate: self,
                 controller: self)
             }
-            if(typeFilm == "feature"){
+            else if(typeMovie == TypeMovie.Feature){
                 movieCell.loadInformation(
-               category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+               category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row - 1],
                genre: String(format:"\(Genre.Feature.rawValue)"),
-               tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row],
+               tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row - 1],
                row: indexPath.row,
                dataSourceDelegate: self,
                controller: self)
             }
-            if(typeFilm == "television"){
+            else{
                 movieCell.loadInformation(
-                category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row],
+                category: ([String](TitleMenu.FeaturesTitleMenu))[indexPath.row - 1],
                 genre: String(format:"\(Genre.Television.rawValue)"),
-                tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row],
+                tag: ([String](TitleMenu.FeaturesTagMenu))[indexPath.row - 1],
                 row: indexPath.row,
                 dataSourceDelegate: self,
                 controller: self)
             }
-            
+            movieCell.delegate = self
             movieCell.collectionViewOffset = storedOffsets[indexPath.row] ?? 0
+          
         }
     }
     
@@ -156,4 +170,25 @@ extension MainController: UICollectionViewDelegate, UICollectionViewDataSource {
  
 }
 
+extension MainController:TagMoviesCellProtocol{
+    func moviePage(_ data: String) {
+        print("ccccc")
+        let controller: DetailMovieController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardId.DetailMovieControllerId) as! DetailMovieController
+   
+        controller.Title = data
+        
+        if (typeMovie == TypeMovie.Hot) {
+            controller.genre = Genre.Hot.rawValue
+        }
+        else if (typeMovie == TypeMovie.Feature) {
+            controller.genre = Genre.Feature.rawValue
+        }
+        else{
+            controller.genre = Genre.Television.rawValue
+        }
 
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
+}

@@ -10,6 +10,26 @@ import UIKit
 
 class SearchCell: UITableViewCell {
 
+    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var movieNameLabel: UILabel!
+    @IBOutlet weak var knownAsLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
+    @IBOutlet weak var plotViText: UITextView!
+    
+    var data: Search? {
+        didSet {
+            guard let data = data else { return }
+            
+           // movieNameLabel.text = data.movieName
+            knownAsLabel.text = data.knownAs
+            plotViText.text = data.plotVi
+            if(data.poster.count > 0){
+                let url = URL.init(string: "\(API.kPosterUrl + data.poster)")! as URL
+                DataManager.shared.downloadImageUrl(imageView: self.posterImage, from: url)            }
+        }
+                
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +39,8 @@ class SearchCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        plotViText.isEditable = false
+
     }
 
 }

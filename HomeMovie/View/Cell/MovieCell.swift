@@ -9,11 +9,18 @@
 import UIKit
 import RealmSwift
 
+protocol TagMoviesCellProtocol : AnyObject {
+    func moviePage(_ data: String)
+}
+
 class MovieCell: UITableViewCell {
 
     // MARK - Properties
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var collectionMovie: UICollectionView!
+    @IBOutlet weak var btnMore: UIButton!
+    
+    weak var delegate:TagMoviesCellProtocol?
     
     var collectionViewOffset: CGFloat {
         get {
@@ -68,8 +75,11 @@ class MovieCell: UITableViewCell {
                 }
             })
     }
-
-//    // MARK - Action
-//    @IBAction func showAll(_ sender: Any) {
-//    }
+    
+    @IBAction func showAll(_ sender: Any) {
+        //print("concac")
+        let title = lbTitle.text!
+        delegate?.moviePage(title)
+      
+    }
 }

@@ -10,21 +10,22 @@ import UIKit
 
 class MoviesController: UIViewController {
 
+    var data:Movie?
+    var postMovie: UIImage?
+    
+    @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var lbKnownAs: UILabel!
+    @IBOutlet weak var imgPoster: UIImageView!
+    @IBOutlet weak var tfDescrip: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        imgPoster.image = postMovie
+        lbKnownAs.text = data?.knownAs
+        lbName.text = data?.movieName
+        tfDescrip.text = data?.plotVi
+        
+        self.tfDescrip.isEditable = false
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
