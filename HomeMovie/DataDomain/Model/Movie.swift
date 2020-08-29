@@ -22,6 +22,7 @@ class Movie: Object, Mappable {
     var banner = ""
     var episode: Int = 0
     var sequence: Int = 0
+    var knownAs = ""
     
     required convenience init?(map: Map) {
         self.init()
@@ -38,5 +39,6 @@ class Movie: Object, Mappable {
         banner              <- map["Backdrop"]
         episode             <- map["Episode"]
         sequence            <- map["Sequence"]
+        knownAs             <- map["KnownAs"]
     }
 }
